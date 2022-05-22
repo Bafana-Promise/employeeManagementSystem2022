@@ -1,0 +1,178 @@
+[
+    {
+        "id": "sd_F2u2fJVv9mp7D1aO",
+        "type": "tab",
+        "createdDate": "2022-05-21T07:40:49.409Z",
+        "label": "section",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 1,
+        "generateNext": true,
+        "serviceName": "sectionComponent"
+    },
+    {
+        "id": "sd_pPqfCC2FEPCaLEwO",
+        "type": "OnInit",
+        "z": "sd_F2u2fJVv9mp7D1aO",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_pPqfCC2FEPCaLEwO",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_z7yoD7Ar3rS9y2c3"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "sectionComponent"
+    },
+    {
+        "id": "sd_z7yoD7Ar3rS9y2c3",
+        "type": "PageVariables",
+        "z": "sd_F2u2fJVv9mp7D1aO",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_z7yoD7Ar3rS9y2c3",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            [
+                "sd_iEOIsyBkLjGaW2IK"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_iEOIsyBkLjGaW2IK",
+        "type": "Script",
+        "z": "sd_F2u2fJVv9mp7D1aO",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.dataSource = new MatTableDataSource([\n  {\n    position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' }\n  ,\n  {\n    position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' }\n  ,\n  {\n    position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' }\n  ,\n  {\n    position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' }\n  ,\n  {\n    position: 5, name: 'Boron', weight: 10.811, symbol: 'B' }\n  ,\n  {\n    position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' }\n  ,\n  {\n    position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' }\n  ,\n  {\n    position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' }\n  ,\n  {\n    position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' }\n  ,\n  {\n    position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' }\n  ,\n]);",
+        "functionName": "sd_eJuzOUTYKNgXaqdz_1",
+        "category": "Function",
+        "x": 190,
+        "y": 140,
+        "wires": [
+            [
+                "sd_fcx3F0nPvQc63IxQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_fcx3F0nPvQc63IxQ",
+        "type": "PageVariables",
+        "z": "sd_F2u2fJVv9mp7D1aO",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "tableData",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "dataSource"
+                }
+            }
+        ],
+        "functionName": "sd_E9QbOlnVduPNV5MO_1",
+        "category": "Function",
+        "x": 330,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_oXBjIvPY7wHwMQii",
+        "type": "AfterViewInit",
+        "z": "sd_F2u2fJVv9mp7D1aO",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "ngAfterViewInit",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 250,
+        "wires": [
+            [
+                "sd_65cmVUDuVEvG4Vtd"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "sectionComponent"
+    },
+    {
+        "id": "sd_65cmVUDuVEvG4Vtd",
+        "type": "ViewPicker",
+        "z": "sd_F2u2fJVv9mp7D1aO",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "childViewVariables": [
+            {
+                "key": {
+                    "type": "literal",
+                    "value": "MatSort"
+                },
+                "defaultValue": "",
+                "isViewChildren": false
+            }
+        ],
+        "functionName": "sd_xKCCTWKzvgDN0rx7_1",
+        "category": "Function",
+        "x": 205,
+        "y": 250,
+        "wires": [
+            [
+                "sd_QoUkNRWCkID1GQkO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_QoUkNRWCkID1GQkO",
+        "type": "Script",
+        "z": "sd_F2u2fJVv9mp7D1aO",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "this.page.tableData.sort = this.MatSort;",
+        "functionName": "sd_2VNGqvcKee34lvOz_1",
+        "category": "Function",
+        "x": 345,
+        "y": 250,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]

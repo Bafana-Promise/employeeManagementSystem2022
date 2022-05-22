@@ -1,0 +1,44 @@
+{
+    "routes": [
+        {
+            "component": "loginComponent",
+            "path": "login"
+        },
+        {
+            "component": "homeComponent",
+            "path": "home",
+            "children": [
+                {
+                    "component": "dashboardComponent",
+                    "path": "dashboard"
+                },
+                {
+                    "component": "sectionComponent",
+                    "path": "section"
+                },
+                {
+                    "component": "adminComponent",
+                    "path": "admin"
+                },
+                {
+                    "component": "employeeComponent",
+                    "path": "employee"
+                },
+                {
+                    "component": "attendanceComponent",
+                    "path": "attendance"
+                }
+            ]
+        },
+        {
+            "path": "''",
+            "redirectTo": "login",
+            "pathMatch": "full",
+            "default": true
+        },
+        {
+            "path": "**",
+            "component": "PageNotFoundComponent"
+        }
+    ]
+}

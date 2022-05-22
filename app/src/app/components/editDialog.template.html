@@ -1,0 +1,54 @@
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" fxFill>
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+    <mat-card>
+      <mat-card-title>Edit User</mat-card-title>
+
+      <mat-card-content>
+        <form #addUser="ngForm">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.dm.edituser.firstName" name="firstName" placeholder="First Name" [required]="true" pattern="^[a-zA-Z]+$">
+              <mat-error align="start" *ngIf="addUser.controls[&apos;firstName&apos;]?.errors?.required">First Name is required</mat-error>
+              <mat-error align="start" *ngIf="addUser.controls[&apos;firstName&apos;]?.errors?.pattern">Only Letters allowed</mat-error>
+              <mat-label>Name</mat-label>
+            </mat-form-field>
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.dm.edituser.lastName" name="lastName" placeholder="Last Name" [required]="true" pattern="^[a-zA-Z]+$">
+              <mat-error align="start" *ngIf="addUser.controls[&apos;lastName&apos;]?.errors?.required">Surname is required</mat-error>
+              <mat-error align="start" *ngIf="addUser.controls[&apos;lastName&apos;]?.errors?.pattern">Only Letters allowed</mat-error>
+              <mat-label>Surname</mat-label>
+            </mat-form-field>
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.dm.edituser.email" name="email" type="email" placeholder="Enter Email" [required]="true" email>
+              <mat-error align="start" *ngIf="addUser.controls[&apos;email&apos;]?.errors?.required">Email is required</mat-error>
+              <mat-error align="start" *ngIf="addUser.controls[&apos;email&apos;]?.errors?.email">Invalid Email</mat-error>
+              <mat-label>Email</mat-label>
+            </mat-form-field>
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.dm.edituser.password" name="password" placeholder="Enter Password" [required]="true" minlength="4" maxlenght="15">
+              <mat-error align="start" *ngIf="addUser.controls[&apos;password&apos;]?.errors?.required">Password is required</mat-error>
+              <mat-error align="start" *ngIf="addUser.controls[&apos;password&apos;]?.errors?.minlength">Password Maximum Length is more than 4</mat-error>
+              <mat-label>Password</mat-label>
+            </mat-form-field>
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.dm.edituser.qualification" name="qualification" placeholder="Qualifications" [required]="true">
+              <mat-error align="start" *ngIf="addUser.controls[&apos;qualification&apos;]?.errors?.required">Qualification is required</mat-error>
+              <mat-label>Qualification</mat-label>
+            </mat-form-field>
+            <mat-form-field [appearance]="&apos;legacy&apos;">
+              <input matInput placeholder="Joining Date" [matDatepicker]="picker" [(ngModel)]="page.dm.edituser.date" name="date" [required]="true" [disabled]="false">
+              <mat-datepicker-toggle matSuffix [for]="picker" disabled="false"></mat-datepicker-toggle>
+              <mat-datepicker #picker [disabled]="false"></mat-datepicker>
+              <mat-error align="start" *ngIf="addUser.controls[&apos;date&apos;]?.errors?.required">Date is required</mat-error>
+            </mat-form-field>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="end stretch" [fxShow]="true"><button mat-raised-button [mat-dialog-close]="addUser.value">Edit user</button><button mat-raised-button mat-dialog-close>Cancel</button></div>
+            </div>
+          </div>
+        </form>
+      </mat-card-content>
+
+      <mat-card-actions></mat-card-actions>
+    </mat-card>
+  </div>
+</div>

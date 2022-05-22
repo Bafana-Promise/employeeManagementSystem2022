@@ -1,0 +1,104 @@
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" fxFill>
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+    <mat-sidenav-container style="background: balck" class="full-width full-height">
+      <mat-sidenav #sidenav class="sideNav-width" [mode]="&apos;side&apos;" [position] [opened]="true" disableClose="true">
+        <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true">
+          <div fxLayout="column wrap" style="background: balck;" class="full-width" fxFlex="95" fxLayoutGap="29px" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="column wrap" class="margin-top17px" fxLayoutGap="12px" fxLayoutAlign="center center" [fxShow]="true">
+              <div fxLayout="column wrap" fxLayoutAlign="end stretch" [fxShow]="true">
+                <div fxLayout="row wrap" style="left: 64px;" class="cursor-pointer relative" fxLayoutAlign="space-around stretch" [fxShow]="true" (click)="sidenav.toggle();page.sideNavOpen = false;" *ngIf="page.sideNavOpen">
+                  <mat-icon style="left: 17px;" class="relative">arrow_back_ios</mat-icon>
+                  <mat-icon>arrow_back_ios</mat-icon>
+                </div>
+              </div>
+              <div class="border-radius50 even-width-height text-align-center powder-blue-bg font-size66 font-weight700 margin-top17px">
+                P</div>
+              <div class="xlargeFont font-weight700">
+                Promise Bafana</div>
+              <div class="font-weight700">
+                bafanapromise1@gmail.com</div>
+            </div>
+            <div fxLayout="column wrap" fxLayoutGap="20px" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" class="cursor-pointer side-nav lightBlue-color" fxLayoutGap="15px" fxLayoutAlign="start center" [fxShow]="true" routerLink="/home/dashboard" routerLinkActive="active">
+                <mat-icon class="font-size34px">dashboard</mat-icon>
+                <div class="top7px relative">
+                  Dashboard</div>
+              </div>
+              <div fxLayout="row wrap" class="cursor-pointer side-nav lightBlue-color" fxLayoutGap="15px" fxLayoutAlign="start center" [fxShow]="true" routerLink="/home/section" routerLinkActive="active">
+                <mat-icon class="font-size34px">scatter_plot</mat-icon>
+                <div class="top7px relative">
+                  Section</div>
+              </div>
+              <div fxLayout="row wrap" class="cursor-pointer side-nav lightBlue-color" fxLayoutGap="15px" fxLayoutAlign="start center" [fxShow]="true" routerLink="/home/admin" routerLinkActive="active">
+                <mat-icon class="font-size34px">pages</mat-icon>
+                <div class="top7px relative">
+                  Admin</div>
+              </div>
+              <div fxLayout="row wrap" class="side-nav cursor-pointer lightBlue-color" fxLayoutGap="15px" fxLayoutAlign="start center" [fxShow]="true" routerLink="/home/employee" routerLinkActive="active">
+                <mat-icon class="font-size34px">hail</mat-icon>
+                <div class="top7px relative">
+                  Employee</div>
+              </div>
+              <div fxLayout="row wrap" class="cursor-pointer side-nav lightBlue-color" fxLayoutGap="15px" fxLayoutAlign="start center" [fxShow]="true" routerLink="/home/attendance" routerLinkActive="active">
+                <mat-icon class="font-size34px">receipt_long</mat-icon>
+                <div class="top7px relative">
+                  Attendance</div>
+              </div>
+              <div fxLayout="row wrap" class="side-nav cursor-pointer lightBlue-color" fxLayoutGap="15px" fxLayoutAlign="start center" [fxShow]="true" (click)="logout()">
+                <mat-icon class="font-size34px">power_settings_new</mat-icon>
+                <div class="top7px relative">
+                  Logout</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-sidenav>
+      <div fxLayout="column wrap" class="height9vh powder-blue-bg" fxLayoutAlign="center stretch" [fxShow]="true">
+        <div fxLayout="row wrap" class="margin-right margin-left" fxLayoutAlign="space-between center" [fxShow]="true">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" class="cursor-pointer white-color" fxLayoutAlign="start stretch" [fxShow]="true" (click)="sidenav.toggle();page.sideNavOpen = true;" *ngIf="!page.sideNavOpen">
+              <mat-icon>arrow_forward_ios</mat-icon>
+              <mat-icon style="right: 15px;" class="relative">arrow_forward_ios</mat-icon>
+            </div>
+          </div>
+          <div fxLayout="column wrap" fxFlex="60" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+              <div fxLayout="column wrap" class="cursor-pointer toolbar-hover" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="/home/dashboard" routerLinkActive="activeHeader">
+                <div class="white-color">
+                  Dashboard</div>
+              </div>
+              <div fxLayout="column wrap" class="cursor-pointer toolbar-hover" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="/home/section" routerLinkActive="activeHeader">
+                <div class="white-color">
+                  Section</div>
+              </div>
+              <div fxLayout="column wrap" class="cursor-pointer toolbar-hover" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="/home/admin" routerLinkActive="activeHeader">
+                <div class="white-color">
+                  Admin </div>
+              </div>
+              <div fxLayout="column wrap" class="cursor-pointer toolbar-hover" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="/home/employee" routerLinkActive="activeHeader">
+                <div class="white-color">
+                  Employee</div>
+              </div>
+              <div fxLayout="column wrap" class="cursor-pointer toolbar-hover" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="/home/attendance" routerLinkActive="activeHeader">
+                <div class="white-color">
+                  Attendance</div>
+              </div>
+              <div fxLayout="column wrap" class="cursor-pointer" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div fxLayout="row wrap" class="toolbar-hover white-color" fxLayoutGap="5px" fxLayoutAlign="start center" [fxShow]="true" (click)="logout()">
+                  <mat-icon>power_settings_new</mat-icon>
+                  <div class="font-weight700">
+                    Logout</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row wrap" style="background: #e8eaed;  height: 91vh;" fxLayoutAlign="center center" [fxShow]="true">
+        <div fxLayout="column wrap" fxFlex="95" fxLayoutAlign="start stretch" [fxShow]="true">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </mat-sidenav-container>
+  </div>
+</div>

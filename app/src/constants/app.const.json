@@ -1,0 +1,9 @@
+{
+    "dataSource": {
+        "login": "neutrinos-training-rt",
+        "adduser": "neutrinos-training-rt",
+        "edituser": "neutrinos-training-rt",
+        "addemployee": "neutrinos-training-rt",
+        "editemployee": "neutrinos-training-rt"
+    }
+}

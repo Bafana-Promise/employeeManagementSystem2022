@@ -1,0 +1,55 @@
+[
+    {
+        "id": "sd_AcYuVwOShmKbdNhP",
+        "type": "tab",
+        "createdDate": "2022-05-22T08:51:00.209Z",
+        "label": "addEmployeeDialog",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "addEmployeeDialogComponent"
+    },
+    {
+        "id": "sd_amIWNasxqGCEwlqv",
+        "type": "OnInit",
+        "z": "sd_AcYuVwOShmKbdNhP",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_amIWNasxqGCEwlqv",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_AdOli7BYWoKcR9sz"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "addEmployeeDialogComponent"
+    },
+    {
+        "id": "sd_AdOli7BYWoKcR9sz",
+        "type": "PageVariables",
+        "z": "sd_AcYuVwOShmKbdNhP",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_AdOli7BYWoKcR9sz",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]

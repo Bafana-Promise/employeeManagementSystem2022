@@ -1,0 +1,55 @@
+[
+    {
+        "id": "sd_ljCziVtQ5q40TfwQ",
+        "type": "tab",
+        "createdDate": "2022-05-21T10:25:12.435Z",
+        "label": "attendance",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "attendanceComponent"
+    },
+    {
+        "id": "sd_ajq1BFupkfa6zG0m",
+        "type": "OnInit",
+        "z": "sd_ljCziVtQ5q40TfwQ",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_ajq1BFupkfa6zG0m",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_C9vLWmJosrlykN2A"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "attendanceComponent"
+    },
+    {
+        "id": "sd_C9vLWmJosrlykN2A",
+        "type": "PageVariables",
+        "z": "sd_ljCziVtQ5q40TfwQ",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_C9vLWmJosrlykN2A",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]

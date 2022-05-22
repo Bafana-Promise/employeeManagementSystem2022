@@ -1,0 +1,54 @@
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" fxFill>
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="full-height background-img" fxLayoutAlign="end stretch" [fxShow]="true">
+      <div fxLayout="column wrap" fxFlex="49" fxLayoutAlign="start stretch" [fxShow]="true">
+        <form #loginForm="ngForm">
+          <div fxLayout="column wrap" class="margin-right16px margin-top17px" fxLayoutGap="12px" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div class="powder-blue-color font-weight700 xxx-largeFont">
+                Login</div>
+            </div>
+            <mat-card class="border-right">
+              <mat-card-title>Welcome!</mat-card-title>
+
+              <mat-card-subtitle align="center">Believe in yourself and you will be unstoppable.</mat-card-subtitle>
+
+              <img mat-card-image>
+
+              <mat-card-content>
+                <div fxLayout="column wrap" class="input-bottom-rightRadius" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <mat-form-field class="input-width96" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                    <input matInput [(ngModel)]="page.dm.login.email" name="email" type="email" placeholder="Enter Email" [required]="true" email>
+                    <mat-error align="start" *ngIf="loginForm.controls[&apos;email&apos;]?.errors?.required">Email is required</mat-error>
+                    <mat-error align="start" *ngIf="loginForm.controls[&apos;email&apos;]?.errors?.email">Invalid email address</mat-error>
+                    <mat-label>Email</mat-label>
+                  </mat-form-field>
+                  <mat-form-field class="input-width88" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                    <input matInput [(ngModel)]="page.dm.login.password" name="password" type="password" placeholder="Enter Password" [required]="true" maxlength="15" minlength="4">
+                    <mat-error align="start" *ngIf="loginForm.controls[&apos;password&apos;]?.errors?.required">Password is required</mat-error>
+                    <mat-error align="start" *ngIf="loginForm.controls[&apos;password&apos;]?.errors?.minlength">Password Maximum Length is more than 4</mat-error>
+                  </mat-form-field>
+                </div>
+              </mat-card-content>
+
+              <mat-card-actions></mat-card-actions>
+            </mat-card>
+            <mat-card class="border-topLeft">
+              <mat-card-title align="right">A better me is coming.</mat-card-title>
+
+              <mat-card-subtitle align="right">All things are possible.</mat-card-subtitle>
+
+              <img mat-card-image>
+
+              <mat-card-content>
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="login-btn-border23px powder-blue-bg white-color" (click)="login(loginForm.value)" [disabled]="loginForm.invalid">Login</button></div>
+              </mat-card-content>
+
+              <mat-card-actions></mat-card-actions>
+            </mat-card>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

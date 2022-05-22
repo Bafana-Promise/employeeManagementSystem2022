@@ -1,0 +1,186 @@
+{
+    "ee441dbf-2d45-6d0c-c5eb-183929b771de": {
+        "dataModelId": "ee441dbf-2d45-6d0c-c5eb-183929b771de",
+        "name": "login",
+        "description": "Login Model",
+        "dataSource": "neutrinos-training-rt",
+        "fields": [
+            {
+                "name": "email",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "password",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            }
+        ]
+    },
+    "195504aa-83ff-62de-bb9d-e5ecc2bb7902": {
+        "dataModelId": "195504aa-83ff-62de-bb9d-e5ecc2bb7902",
+        "name": "adduser",
+        "description": "add users ",
+        "dataSource": "neutrinos-training-rt",
+        "fields": [
+            {
+                "name": "firstName",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "lastName",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "email",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "password",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "qualification",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "date",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            }
+        ]
+    },
+    "45bac739-72f7-e38e-f530-a888859fbb5e": {
+        "dataModelId": "45bac739-72f7-e38e-f530-a888859fbb5e",
+        "name": "edituser",
+        "description": "edit user ",
+        "dataSource": "neutrinos-training-rt",
+        "fields": [
+            {
+                "name": "firstName",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "lastName",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "email",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "password",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "qualification",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "date",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            }
+        ]
+    },
+    "4bbad1f2-7117-2776-819d-0a1126c5fb73": {
+        "dataModelId": "4bbad1f2-7117-2776-819d-0a1126c5fb73",
+        "name": "addemployee",
+        "description": "Add all employee",
+        "dataSource": "neutrinos-training-rt",
+        "fields": [
+            {
+                "name": "firstName",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "lastName",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "rollNo",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "date",
+                "fieldType": 3,
+                "isArray": false,
+                "type": "Date"
+            },
+            {
+                "name": "section",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            }
+        ]
+    },
+    "ad7584ba-cba6-4c5c-55de-b16c1b4fefdf": {
+        "dataModelId": "ad7584ba-cba6-4c5c-55de-b16c1b4fefdf",
+        "name": "editemployee",
+        "description": "Edit employee user",
+        "dataSource": "neutrinos-training-rt",
+        "fields": [
+            {
+                "name": "firstName",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "lastName",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "rollOn",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "date",
+                "fieldType": 3,
+                "isArray": false,
+                "type": "Date"
+            },
+            {
+                "name": "section",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            }
+        ]
+    }
+}

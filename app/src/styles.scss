@@ -1,0 +1,210 @@
+/*Importing default angular material css theme. */
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "nDefaults.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$aliceblue: aliceblue;
+$powder-blue: rgb(86, 136, 185);
+$white-color: white;
+$light-blue: #16aaf5;
+$dark-navy: #253765;
+$blue: blue;
+$green-color: green;
+$red-color: red;
+*{
+    font-family: roboto;
+}
+// All Widths for the entire app
+.full-width{
+    width: 100%;
+}
+.sideNav-width{
+    width: 20%;
+}
+.input-width88{
+    width: 88%;
+};
+.input-width96{
+    width: 96%;
+};
+.even-width-height{
+    width: 90px;
+    height: 90px;
+}
+// Color and Bg for the entire app
+.powder-blue-color{
+    color: $powder-blue;
+}
+.powder-blue-bg{
+    background: $powder-blue;
+}
+.white-color{
+    color: $white-color;
+}
+.white-bg{
+    color: $white-color;
+}
+.sideNav-Bg{
+    background: rgb(247 247 247);
+}
+.lightBlue-color{
+    color: $light-blue;
+}
+.lightBlue-Bg{
+    background: $light-blue;
+}
+.red-color{
+    color: $red-color;
+}
+.green-color{
+    color: $green-color;
+}
+.dark-navyColor{
+    color: $dark-navy;
+}
+// Height For the app
+.full-height{
+    height: 100vh;
+}
+.height9vh{
+    height: 9vh;
+}
+.height100{
+    height: 100%;
+}
+.height31vh{
+    height: 31vh;
+}
+.height80vh{
+    height: 80vh;
+}
+.height52vh{
+    height: 52vh;
+}
+// Margin
+.margin-right16px{
+    margin-right: 16px;
+}
+.margin-top17px{
+    margin-top: 17px;
+}
+.margin-left{
+    margin-left: 22px;
+}
+.margin-right{
+    margin-right: 22px;
+}
+// position
+.absolute{
+    position: absolute;
+}
+.relative{
+    position: relative;
+}
+.top7px{
+    top: 7px;
+};
+// fonts $ text align
+.font-size66{
+    font-size: 78px;
+}
+.font-size34px{
+    font-size: 34px;
+};
+.xlargeFont{
+    font-size: x-large;
+}
+.xxx-largeFont{
+    font-size: xxx-large;
+};
+.font-weight700{
+    font-weight: 700;
+}
+.text-align-center{
+    text-align: center;
+}
+// border radius 
+.border-radius50{
+    border-radius: 50%;
+}
+.login-btn-border23px{
+    border-radius: 23px !important;
+}
+.input-bottom-rightRadius{
+    .mat-form-field-appearance-outline .mat-form-field-outline-end {
+    border-radius: 0 5px 70px 0;
+}
+}
+.border-right{
+    border-radius: 6px 6px 366px 6px !important;
+    height: 52vh;
+}
+.border-topLeft{
+    border-radius: 150px 6px 6px 6px !important;
+    height: 20vh;
+}
+// Cursor & hover
+.cursor-pointer{
+    cursor: pointer;
+}
+.toolbar-hover :hover{
+    font-size: 19px;
+    font-weight: 700;
+    color: $white-color;
+}
+.activeHeader{
+    font-size: 19px;
+    font-weight: 700;
+    color: $white-color;
+}
+.side-nav:hover{
+    background: $aliceblue;
+    padding: 8px 8px 18px 8px;
+    border-left: 4px solid $powder-blue;
+    margin: 0px -6px;
+    color: $light-blue;
+}
+.active{
+    color: $light-blue;
+    background: $aliceblue;
+    padding: 8px 8px 18px 8px;
+    border-left: 4px solid $powder-blue;
+    margin: 0px -6px;
+}
+// Background 
+.background-img{
+    background-image: url(./assets/Web/Icons/loginImg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+// Scroller & and overflow
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+*::-webkit-scrollbar-track {
+  background: $light-blue; 
+}
+*::-webkit-scrollbar-thumb {
+  background: $light-blue;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgb(125, 156, 194);
+}
+.overflow-x-scroll{
+    overflow-x: scroll;
+}
+.overflow-y-scroll{
+    overflow-y: scroll;
+}
+.overflow-x-auto{
+    overflow-x: auto;
+}
+.stucky-header{
+    th {
+  background: white;
+  position: sticky;
+  top: 0;
+ }
+}

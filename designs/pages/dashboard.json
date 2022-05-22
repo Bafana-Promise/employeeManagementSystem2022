@@ -1,0 +1,154 @@
+[
+    {
+        "id": "sd_MwZf70r1LlVTAxKv",
+        "type": "tab",
+        "createdDate": "2022-05-19T21:58:49.295Z",
+        "label": "dashboard",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "dashboardComponent"
+    },
+    {
+        "id": "sd_GH0OR2pXdQfVXqas",
+        "type": "OnInit",
+        "z": "sd_MwZf70r1LlVTAxKv",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_GH0OR2pXdQfVXqas",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_hXjvJREexDfCAife"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "dashboardComponent"
+    },
+    {
+        "id": "sd_hXjvJREexDfCAife",
+        "type": "PageVariables",
+        "z": "sd_MwZf70r1LlVTAxKv",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "chartType",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "chartDatasets",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "chartLabels",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "chartColors",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "chartOptions",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "pieChartData",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "pieChartLabels",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "pieChartOptions",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_hXjvJREexDfCAife",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            [
+                "sd_5Z6gIIbZjLBteyzL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_5Z6gIIbZjLBteyzL",
+        "type": "Script",
+        "z": "sd_MwZf70r1LlVTAxKv",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.chartType = 'line';\npage.chartDatasets = [\n  { data: [65, 59, 80, 81, 56, 55, 40], label: 'This years Bookings' },\n  { data: [28, 48, 40, 19, 86, 27, 90], label: 'Last years booking' }\n];\npage.chartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];\npage.chartColors = [\n  {\n    backgroundColor: 'rgba(105, 0, 132, .2)',\n    borderColor: 'rgba(200, 99, 132, .7)',\n    borderWidth: 2,\n  },\n  {\n    backgroundColor: 'rgba(0, 137, 132, .2)',\n    borderColor: 'rgba(0, 10, 130, .7)',\n    borderWidth: 2,\n  }\n];\npage.chartOptions = {\n  responsive: true\n};\n",
+        "functionName": "sd_5Z6gIIbZjLBteyzL",
+        "category": "Function",
+        "x": 340,
+        "y": 40,
+        "wires": [
+            [
+                "sd_siVo6jVsOnvCLwhC"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_siVo6jVsOnvCLwhC",
+        "type": "Script",
+        "z": "sd_MwZf70r1LlVTAxKv",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.pieChartData = [{\n    data: [300, 500, 100]\n}\n];\n\npage.pieChartLabels = ['Last year 2021','Current year 2022', 'Last of last year 2020'];\n\npage.pieChartOptions = {\n    responsive: true\n}",
+        "functionName": "sd_siVo6jVsOnvCLwhC",
+        "category": "Function",
+        "x": 485,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]
