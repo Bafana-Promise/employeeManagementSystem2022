@@ -15,6 +15,7 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import { MAT_DIALOG_DATA } from '@angular/material/dialog'; //_splitter_
 import { FormControl, Validators, FormBuilder } from '@angular/forms'; //_splitter_
 //append_imports_end
 
@@ -57,7 +58,7 @@ export class editDialogComponent {
 
   sd_KZNVyZsM8gdq5i48(bh) {
     try {
-      bh = this.sd_o4pgD06dtrvjenXw(bh);
+      bh = this.sd_MIfZOL1j3KJgTmIq(bh);
       //appendnew_next_sd_KZNVyZsM8gdq5i48
       return bh;
     } catch (e) {
@@ -67,12 +68,28 @@ export class editDialogComponent {
 
   //appendnew_flow_editDialogComponent_start
 
-  sd_o4pgD06dtrvjenXw(bh) {
+  sd_MIfZOL1j3KJgTmIq(bh) {
     try {
-      //appendnew_next_sd_o4pgD06dtrvjenXw
+      this.page.data = this.__page_injector__.get(MAT_DIALOG_DATA);
+
+      bh = this.sd_v67uzJyxlr99wc4v(bh);
+      //appendnew_next_sd_MIfZOL1j3KJgTmIq
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_o4pgD06dtrvjenXw');
+      return this.errorHandler(bh, e, 'sd_MIfZOL1j3KJgTmIq');
+    }
+  }
+
+  sd_v67uzJyxlr99wc4v(bh) {
+    try {
+      const page = this.page;
+      page.dm.edituser = page.data;
+
+      console.log(page.data, 'Exe');
+      //appendnew_next_sd_v67uzJyxlr99wc4v
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_v67uzJyxlr99wc4v');
     }
   }
 

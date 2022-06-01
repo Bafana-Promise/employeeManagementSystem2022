@@ -4,32 +4,63 @@
       <div class="font-weight700">
         Attedance</div>
     </div>
-    <div fxLayout="column wrap" class="stucky-header overflow-x-auto height80vh" fxLayoutAlign="start stretch" [fxShow]="true">
-      <div fxLayout="column">
-        <table mat-table [dataSource]="page?.tableData" matSort class="table-width-fix">
-          <tr mat-header-row *matHeaderRowDef="[&apos;position&apos;,&apos;name&apos;,&apos;weight&apos;,&apos;symbol&apos;]"></tr>
-          <tr mat-row *matRowDef="let row; columns: [&apos;position&apos;,&apos;name&apos;,&apos;weight&apos;,&apos;symbol&apos;];"></tr>
+    <div fxLayout="row wrap" class="overflow-x-auto height80vh" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" class="stucky-header" fxFlex="100" fxLayoutGap="12px" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column">
+          <table mat-table [dataSource]="page?.userTableData" *ngIf="!page.admin" fxShow="!page.admin" matSort class="table-width-fix">
+            <tr mat-header-row *matHeaderRowDef="[&apos;fullName&apos;,&apos;email&apos;,&apos;8184657a-6479-72e5-90ea-68b2d782d740&apos;,&apos;_id&apos;]"></tr>
+            <tr mat-row *matRowDef="let row; columns: [&apos;fullName&apos;,&apos;email&apos;,&apos;8184657a-6479-72e5-90ea-68b2d782d740&apos;,&apos;_id&apos;];"></tr>
 
-          <ng-container matColumnDef="position">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Position</th>
-            <td mat-cell *matCellDef="let table; let i = index;">{{table.position}}</td>
-          </ng-container>
+            <ng-container matColumnDef="fullName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Full Name</th>
+              <td mat-cell *matCellDef="let table; let i = index;">{{table.fullName}}</td>
+            </ng-container>
 
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-            <td mat-cell *matCellDef="let table; let i = index;">{{table.name}}</td>
-          </ng-container>
+            <ng-container matColumnDef="email">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+              <td mat-cell *matCellDef="let table; let i = index;">{{table.email}}</td>
+            </ng-container>
 
-          <ng-container matColumnDef="weight">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Weight</th>
-            <td mat-cell *matCellDef="let table; let i = index;">{{table.weight}}</td>
-          </ng-container>
+            <ng-container matColumnDef="8184657a-6479-72e5-90ea-68b2d782d740">
+              <th mat-header-cell *matHeaderCellDef>Attendance</th>
+              <td mat-cell *matCellDef="let table; let i = index;"><span [ngClass]="(table.attendance === false) ? &apos;red-color&apos;: &apos;green-color&apos;">
+                {{ (table.attendance === false) ? &apos;Absent&apos;: &apos;Present&apos; }}</span></td>
+            </ng-container>
 
-          <ng-container matColumnDef="symbol">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Symbol</th>
-            <td mat-cell *matCellDef="let table; let i = index;">{{table.symbol}}</td>
-          </ng-container>
-        </table>
+            <ng-container matColumnDef="_id">
+              <th mat-header-cell *matHeaderCellDef>Attendance ID</th>
+              <td mat-cell *matCellDef="let table; let i = index;">{{table._id}}</td>
+            </ng-container>
+          </table>
+        </div>
+
+        <div fxLayout="column">
+          <table mat-table [dataSource]="page?.tableData" matSort class="table-width-fix">
+            <tr mat-header-row *matHeaderRowDef="[&apos;fullName&apos;,&apos;email&apos;,&apos;8184657a-6479-72e5-90ea-68b2d782d740&apos;,&apos;_id&apos;]"></tr>
+            <tr mat-row *matRowDef="let row; columns: [&apos;fullName&apos;,&apos;email&apos;,&apos;8184657a-6479-72e5-90ea-68b2d782d740&apos;,&apos;_id&apos;];"></tr>
+
+            <ng-container matColumnDef="fullName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Full Name</th>
+              <td mat-cell *matCellDef="let table; let i = index;">{{table.fullName}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="email">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+              <td mat-cell *matCellDef="let table; let i = index;">{{table.email}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="8184657a-6479-72e5-90ea-68b2d782d740">
+              <th mat-header-cell *matHeaderCellDef>Attendance</th>
+              <td mat-cell *matCellDef="let table; let i = index;"><span [ngClass]="(table.attendance === false) ? &apos;red-color&apos;: &apos;green-color&apos;">
+                {{ (table.attendance === false) ? &apos;Absent&apos;: &apos;Present&apos; }}</span></td>
+            </ng-container>
+
+            <ng-container matColumnDef="_id">
+              <th mat-header-cell *matHeaderCellDef>Attendance ID</th>
+              <td mat-cell *matCellDef="let table; let i = index;">{{table._id}}</td>
+            </ng-container>
+          </table>
+        </div>
       </div>
     </div>
   </div>

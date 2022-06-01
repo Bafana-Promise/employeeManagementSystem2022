@@ -15,6 +15,7 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import { crudOperation } from 'app/sd-services/crudOperation'; //_splitter_
 import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
 import { FormControl, Validators, FormBuilder } from '@angular/forms'; //_splitter_
 //append_imports_end
@@ -73,7 +74,7 @@ export class loginComponent {
         .constructFlowObject(this);
       bh.input = { loginUser: loginUser };
       bh.local = {};
-      bh = this.sd_PgmSsrfl1nY2WSZE(bh);
+      bh = this.sd_Zc8Dw8wVMX0DLtNf(bh);
       //appendnew_next_login
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_6ivvWTwa69JbIX0Z');
@@ -91,11 +92,39 @@ export class loginComponent {
     }
   }
 
+  async sd_Zc8Dw8wVMX0DLtNf(bh) {
+    try {
+      const crudOperationInstance: crudOperation =
+        this.__page_injector__.get(crudOperation);
+
+      let outputVariables = await crudOperationInstance.loginUser(
+        bh.input.loginUser
+      );
+      bh.local.data = outputVariables.local.result;
+
+      bh = this.sd_PgmSsrfl1nY2WSZE(bh);
+      //appendnew_next_sd_Zc8Dw8wVMX0DLtNf
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_Zc8Dw8wVMX0DLtNf');
+    }
+  }
+
   sd_PgmSsrfl1nY2WSZE(bh) {
     try {
       const page = this.page;
-      sessionStorage.setItem('user', JSON.stringify(bh.input.loginUser));
-      window.location.href = '/home/dashboard';
+      bh.local.message = '';
+      if (!bh.local.data.length) {
+        bh.local.message = 'User does not exist Or Incorrect Email';
+      } else if (bh.local.data[0].password === bh.input.loginUser.password) {
+        sessionStorage.setItem('user', JSON.stringify(bh.local.data[0]));
+        bh.local.message = 'Logged In Sucessfully';
+        window.location.href = '/home/dashboard';
+      } else {
+        bh.local.message = 'Invalid Password';
+      }
+      // sessionStorage.setItem("user", JSON.stringify(bh.input.loginUser))
+      // window.location.href =  '/home/dashboard'
       bh = this.sd_IhQVlFddSz3AKOsY(bh);
       //appendnew_next_sd_PgmSsrfl1nY2WSZE
       return bh;
@@ -106,14 +135,12 @@ export class loginComponent {
 
   sd_IhQVlFddSz3AKOsY(bh) {
     try {
-      this.__page_injector__
-        .get(MatSnackBar)
-        .open('Login successfully', 'close', {
-          duration: 400,
-          direction: 'ltr',
-          horizontalPosition: 'center',
-          verticalPosition: 'bottom',
-        });
+      this.__page_injector__.get(MatSnackBar).open(bh.local.message, 'close', {
+        duration: 4000,
+        direction: 'ltr',
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom',
+      });
       //appendnew_next_sd_IhQVlFddSz3AKOsY
       return bh;
     } catch (e) {

@@ -1,10 +1,11 @@
 //append_imports_start
 
+import * as sd_YYmVHxmaRPx28YeD from 'app/sd-services/crudOperation'; //_splitter_
 import { Injectable } from '@angular/core'; //_splitter_
 //append_imports_end
 @Injectable({ providedIn: 'root' })
 export class __NEU_ServiceInvokerService__ {
-  constructor() {}
+  constructor(private sd_YYmVHxmaRPx28YeD: sd_YYmVHxmaRPx28YeD.crudOperation) {}
   invoke(
     injectedServiceId: string,
     methodName: string,

@@ -2,19 +2,16 @@ import {JsonProperty, JsonObject} from '../lib/tj.deserializer'
 
 @JsonObject
 export class editemployee {
-  @JsonProperty('firstName', String, true)
-  public firstName: string = undefined;
+  @JsonProperty('fullName', String, true)
+  public fullName: string = undefined;
 
-  @JsonProperty('lastName', String, true)
-  public lastName: string = undefined;
+  @JsonProperty('email', String, true)
+  public email: string = undefined;
 
-  @JsonProperty('rollOn', String, true)
-  public rollOn: string = undefined;
+  @JsonProperty('currentDate', Date, true)
+  public currentDate: Date = undefined;
 
-  @JsonProperty('date', Date, true)
-  public date: Date = undefined;
-
-  @JsonProperty('section', String, true)
-  public section: string = undefined;
+  @JsonProperty('attendance', Boolean, true)
+  public attendance: boolean = undefined;
 
 }

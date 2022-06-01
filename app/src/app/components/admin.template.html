@@ -3,41 +3,46 @@
     <div fxLayout="column wrap" fxLayoutAlign="start none" [fxShow]="true">
       <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
         <div class="font-weight700">
-          Admin </div><button mat-raised-button (click)="openDialog()">add</button>
+          Admin ID : {{page.loggedInUser._id }}</div><button mat-raised-button (click)="openDialog()">add</button>
       </div>
     </div>
     <div fxLayout="column wrap" class="stucky-header overflow-x-auto height80vh" fxLayoutAlign="start stretch" [fxShow]="true">
       <div fxLayout="column">
         <table mat-table [dataSource]="page?.tableData" matSort class="table-width-fix">
-          <tr mat-header-row *matHeaderRowDef="[&apos;position&apos;,&apos;name&apos;,&apos;weight&apos;,&apos;symbol&apos;,&apos;b6d635df-5fb8-ffc0-23db-3621db40f8ae&apos;]"></tr>
-          <tr mat-row *matRowDef="let row; columns: [&apos;position&apos;,&apos;name&apos;,&apos;weight&apos;,&apos;symbol&apos;,&apos;b6d635df-5fb8-ffc0-23db-3621db40f8ae&apos;];"></tr>
+          <tr mat-header-row *matHeaderRowDef="[&apos;firstName&apos;,&apos;lastName&apos;,&apos;qualification&apos;,&apos;email&apos;,&apos;date.slice(0, 10)&apos;,&apos;b6d635df-5fb8-ffc0-23db-3621db40f8ae&apos;]"></tr>
+          <tr mat-row *matRowDef="let row; columns: [&apos;firstName&apos;,&apos;lastName&apos;,&apos;qualification&apos;,&apos;email&apos;,&apos;date.slice(0, 10)&apos;,&apos;b6d635df-5fb8-ffc0-23db-3621db40f8ae&apos;];"></tr>
 
-          <ng-container matColumnDef="position">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Position</th>
-            <td mat-cell *matCellDef="let table; let i = index;">{{table.position}}</td>
-          </ng-container>
-
-          <ng-container matColumnDef="name">
+          <ng-container matColumnDef="firstName">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-            <td mat-cell *matCellDef="let table; let i = index;">{{table.name}}</td>
+            <td mat-cell *matCellDef="let table; let i = index;">{{table.firstName}}</td>
           </ng-container>
 
-          <ng-container matColumnDef="weight">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Weight</th>
-            <td mat-cell *matCellDef="let table; let i = index;">{{table.weight}}</td>
+          <ng-container matColumnDef="lastName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Surname</th>
+            <td mat-cell *matCellDef="let table; let i = index;">{{table.lastName}}</td>
           </ng-container>
 
-          <ng-container matColumnDef="symbol">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Symbol</th>
-            <td mat-cell *matCellDef="let table; let i = index;">{{table.symbol}}</td>
+          <ng-container matColumnDef="qualification">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Qualification</th>
+            <td mat-cell *matCellDef="let table; let i = index;">{{table.qualification}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+            <td mat-cell *matCellDef="let table; let i = index;">{{table.email}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="date.slice(0, 10)">
+            <th mat-header-cell *matHeaderCellDef>Date</th>
+            <td mat-cell *matCellDef="let table; let i = index;">{{table.date.slice(0, 10)}}</td>
           </ng-container>
 
           <ng-container matColumnDef="b6d635df-5fb8-ffc0-23db-3621db40f8ae">
             <th mat-header-cell *matHeaderCellDef>Action</th>
             <td mat-cell *matCellDef="let table; let i = index;">
               <div fxLayout="row wrap" fxLayoutGap="12px" fxLayoutAlign="start stretch" [fxShow]="true">
-                <mat-icon class="cursor-pointer green-color" (click)="edit()">edit</mat-icon>
-                <mat-icon class="cursor-pointer red-color">delete</mat-icon>
+                <mat-icon class="cursor-pointer green-color" (click)="edit(table)">edit</mat-icon>
+                <mat-icon class="cursor-pointer red-color" (click)="deleteUser(table._id)">delete</mat-icon>
               </div>
             </td>
           </ng-container>

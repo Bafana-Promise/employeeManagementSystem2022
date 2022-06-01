@@ -83,10 +83,28 @@ export class homeComponent {
   sd_nJ7cHAC8iMsjo3N4(bh) {
     try {
       this.page.sideNavOpen = true;
+      this.page.loggedInUser = undefined;
+      bh = this.sd_YnqcjJQVADH6ibaf(bh);
       //appendnew_next_sd_nJ7cHAC8iMsjo3N4
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_nJ7cHAC8iMsjo3N4');
+    }
+  }
+
+  sd_YnqcjJQVADH6ibaf(bh) {
+    try {
+      const page = this.page;
+      let email = JSON.parse(sessionStorage.getItem('user')).email;
+      page.owner = {
+        email,
+      };
+      page.admin = email.includes('admin');
+      page.loggedInUser = JSON.parse(sessionStorage.getItem('user'));
+      //appendnew_next_sd_YnqcjJQVADH6ibaf
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_YnqcjJQVADH6ibaf');
     }
   }
 

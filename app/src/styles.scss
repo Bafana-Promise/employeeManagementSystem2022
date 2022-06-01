@@ -57,6 +57,12 @@ $red-color: red;
 .red-color{
     color: $red-color;
 }
+.btn-border-green{
+    border: 1px solid $green-color !important;
+}
+.btn-border-red{
+    border: 1px solid $red-color !important;
+}
 .green-color{
     color: $green-color;
 }

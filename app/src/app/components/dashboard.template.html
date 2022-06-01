@@ -6,21 +6,20 @@
           <mat-card-content>
             <div fxLayout="column wrap" fxLayoutGap="9px" fxLayoutAlign="start stretch" [fxShow]="true">
               <div class="font-weight700">
-                Emplyees</div>
+                Name : {{page.loggedInUser.firstName.toUpperCase() }}</div>
               <div fxLayout="row wrap" class="lightBlue-color" fxLayoutAlign="start stretch" [fxShow]="true">
                 <mat-icon>filter_list</mat-icon>
               </div>
               <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
                 <div class="xxx-largeFont font-weight700">
-                  100</div>
+                  {{page.loggedInUser._id.slice(7,10) }}
+                </div>
                 <div>
                 </div>
               </div>
               <div fxLayout="row wrap" fxLayoutGap="4px" fxLayoutAlign="start stretch" [fxShow]="true">
                 <div>
-                  Employee&apos;s count </div>
-                <div>
-                  100</div>
+                  User Id : {{page.loggedInUser._id.slice(0,10) }} </div>
               </div>
             </div>
           </mat-card-content>
@@ -33,21 +32,20 @@
           <mat-card-content>
             <div fxLayout="column wrap" fxLayoutGap="9px" fxLayoutAlign="start stretch" [fxShow]="true">
               <div class="font-weight700">
-                Emplyees</div>
+                Qualification</div>
               <div fxLayout="row wrap" class="lightBlue-color" fxLayoutAlign="start stretch" [fxShow]="true">
                 <mat-icon>filter_list</mat-icon>
               </div>
               <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
                 <div class="xxx-largeFont font-weight700">
-                  100</div>
+                  {{page.loggedInUser.qualification}}
+                </div>
                 <div>
                 </div>
               </div>
               <div fxLayout="row wrap" fxLayoutGap="4px" fxLayoutAlign="start stretch" [fxShow]="true">
                 <div>
-                  Employee&apos;s count </div>
-                <div>
-                  100</div>
+                  Join date : {{page.loggedInUser.date.toString().slice(0,10) }} </div>
               </div>
             </div>
           </mat-card-content>
@@ -60,21 +58,22 @@
           <mat-card-content>
             <div fxLayout="column wrap" fxLayoutGap="9px" fxLayoutAlign="start stretch" [fxShow]="true">
               <div class="font-weight700">
-                Emplyees</div>
+                Attendance count</div>
               <div fxLayout="row wrap" class="lightBlue-color" fxLayoutAlign="start stretch" [fxShow]="true">
                 <mat-icon>filter_list</mat-icon>
               </div>
               <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-                <div class="xxx-largeFont font-weight700">
-                  100</div>
-                <div>
+                <div *ngIf="!page.admin" class="green-color red-color xxx-largeFont font-weight700">
+                  {{page.present.length}}
+                </div>
+                <div *ngIf="page.admin" class="green-color font-weight700 xxx-largeFont">
+                  {{page.allPresent.length}}
                 </div>
               </div>
               <div fxLayout="row wrap" fxLayoutGap="4px" fxLayoutAlign="start stretch" [fxShow]="true">
                 <div>
-                  Employee&apos;s count </div>
-                <div>
-                  100</div>
+                  {{page.loggedInUser.email }}
+                </div>
               </div>
             </div>
           </mat-card-content>
@@ -87,21 +86,22 @@
           <mat-card-content>
             <div fxLayout="column wrap" fxLayoutGap="9px" fxLayoutAlign="start stretch" [fxShow]="true">
               <div class="font-weight700">
-                Emplyees</div>
+                Absent count</div>
               <div fxLayout="row wrap" class="lightBlue-color" fxLayoutAlign="start stretch" [fxShow]="true">
                 <mat-icon>filter_list</mat-icon>
               </div>
               <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-                <div class="xxx-largeFont font-weight700">
-                  100</div>
-                <div>
+                <div *ngIf="!page.admin" class="red-color xxx-largeFont font-weight700">
+                  {{page.absent.length}}
+                </div>
+                <div *ngIf="page.admin" class="red-color font-weight700 xxx-largeFont">
+                  {{page.allAbsent.length}}
                 </div>
               </div>
               <div fxLayout="row wrap" fxLayoutGap="4px" fxLayoutAlign="start stretch" [fxShow]="true">
                 <div>
-                  Employee&apos;s count </div>
-                <div>
-                  100</div>
+                  {{page.loggedInUser.email }}
+                </div>
               </div>
             </div>
           </mat-card-content>

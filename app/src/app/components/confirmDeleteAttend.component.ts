@@ -16,17 +16,16 @@ import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
 import { MAT_DIALOG_DATA } from '@angular/material/dialog'; //_splitter_
-import { FormControl, Validators, FormBuilder } from '@angular/forms'; //_splitter_
 //append_imports_end
 
 @Component({
-  selector: 'bh-editEmployeeDialog',
-  templateUrl: './editEmployeeDialog.template.html',
+  selector: 'bh-confirmDeleteAttend',
+  templateUrl: './confirmDeleteAttend.template.html',
   providers: [
     //appendnew_element_providers
   ],
 })
-export class editEmployeeDialogComponent {
+export class confirmDeleteAttendComponent {
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -35,7 +34,6 @@ export class editEmployeeDialogComponent {
   ) {
     this.__page_injector__.get(SDPageCommonService).addPageDefaults(this.page);
     this.registerListeners();
-    this.page.dep.FormBuilder = this.__page_injector__.get(FormBuilder); //FormBuilder
     //appendnew_element_inject
   }
 
@@ -44,7 +42,7 @@ export class editEmployeeDialogComponent {
       .get(SDPageCommonService)
       .constructFlowObject(this);
     {
-      this.sd_oYxycALnSKjWAAEy(bh);
+      this.sd_0cWUPGwtYX54HShC(bh);
     }
   }
 
@@ -56,48 +54,61 @@ export class editEmployeeDialogComponent {
     //append_listeners
   }
 
-  sd_oYxycALnSKjWAAEy(bh) {
+  sd_0cWUPGwtYX54HShC(bh) {
     try {
-      bh = this.sd_9DpcGufmrBhK9kGM(bh);
-      bh = this.sd_gJFr42OUiklSqMIz(bh);
-      //appendnew_next_sd_oYxycALnSKjWAAEy
+      bh = this.sd_7se1VnmMGGvT5d2H(bh);
+      //appendnew_next_sd_0cWUPGwtYX54HShC
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_oYxycALnSKjWAAEy');
+      return this.errorHandler(bh, e, 'sd_0cWUPGwtYX54HShC');
     }
   }
 
-  //appendnew_flow_editEmployeeDialogComponent_start
-
-  sd_9DpcGufmrBhK9kGM(bh) {
+  yes(...others) {
     try {
-      //appendnew_next_sd_9DpcGufmrBhK9kGM
-      return bh;
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_GiN0Wn5ij4P9Ih3s(bh);
+      //appendnew_next_yes
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_9DpcGufmrBhK9kGM');
+      return this.errorHandler(bh, e, 'sd_EcNIwaBJwVYJkAmX');
     }
   }
 
-  sd_gJFr42OUiklSqMIz(bh) {
-    try {
-      this.page.data = this.__page_injector__.get(MAT_DIALOG_DATA);
+  //appendnew_flow_confirmDeleteAttendComponent_start
 
-      bh = this.sd_igWJQhcqAQbEGYy4(bh);
-      //appendnew_next_sd_gJFr42OUiklSqMIz
+  sd_7se1VnmMGGvT5d2H(bh) {
+    try {
+      bh = this.sd_VNTOjOymeqIvyZGJ(bh);
+      //appendnew_next_sd_7se1VnmMGGvT5d2H
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_gJFr42OUiklSqMIz');
+      return this.errorHandler(bh, e, 'sd_7se1VnmMGGvT5d2H');
     }
   }
 
-  sd_igWJQhcqAQbEGYy4(bh) {
+  sd_VNTOjOymeqIvyZGJ(bh) {
+    try {
+      this.page.id = this.__page_injector__.get(MAT_DIALOG_DATA);
+
+      //appendnew_next_sd_VNTOjOymeqIvyZGJ
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_VNTOjOymeqIvyZGJ');
+    }
+  }
+
+  sd_GiN0Wn5ij4P9Ih3s(bh) {
     try {
       const page = this.page;
-      page.dm.editemployee = page.data;
-      //appendnew_next_sd_igWJQhcqAQbEGYy4
+      console.log(page.id, 'matric');
+      //appendnew_next_sd_GiN0Wn5ij4P9Ih3s
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_igWJQhcqAQbEGYy4');
+      return this.errorHandler(bh, e, 'sd_GiN0Wn5ij4P9Ih3s');
     }
   }
 
@@ -123,5 +134,5 @@ export class editEmployeeDialogComponent {
       throw e;
     }
   }
-  //appendnew_flow_editEmployeeDialogComponent_Catch
+  //appendnew_flow_confirmDeleteAttendComponent_Catch
 }

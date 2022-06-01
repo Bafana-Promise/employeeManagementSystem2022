@@ -12,11 +12,14 @@
                 </div>
               </div>
               <div class="border-radius50 even-width-height text-align-center powder-blue-bg font-size66 font-weight700 margin-top17px">
-                P</div>
+                {{page.loggedInUser.firstName.charAt(0).toUpperCase() }}
+              </div>
               <div class="xlargeFont font-weight700">
-                Promise Bafana</div>
+                {{page.loggedInUser.firstName.toUpperCase()}} {{page.loggedInUser.lastName.toUpperCase()}}
+              </div>
               <div class="font-weight700">
-                bafanapromise1@gmail.com</div>
+                {{page.loggedInUser.email}}
+              </div>
             </div>
             <div fxLayout="column wrap" fxLayoutGap="20px" fxLayoutAlign="start stretch" [fxShow]="true">
               <div fxLayout="row wrap" class="cursor-pointer side-nav lightBlue-color" fxLayoutGap="15px" fxLayoutAlign="start center" [fxShow]="true" routerLink="/home/dashboard" routerLinkActive="active">
@@ -24,12 +27,7 @@
                 <div class="top7px relative">
                   Dashboard</div>
               </div>
-              <div fxLayout="row wrap" class="cursor-pointer side-nav lightBlue-color" fxLayoutGap="15px" fxLayoutAlign="start center" [fxShow]="true" routerLink="/home/section" routerLinkActive="active">
-                <mat-icon class="font-size34px">scatter_plot</mat-icon>
-                <div class="top7px relative">
-                  Section</div>
-              </div>
-              <div fxLayout="row wrap" class="cursor-pointer side-nav lightBlue-color" fxLayoutGap="15px" fxLayoutAlign="start center" [fxShow]="true" routerLink="/home/admin" routerLinkActive="active">
+              <div fxLayout="row wrap" class="cursor-pointer side-nav lightBlue-color" fxLayoutGap="15px" fxLayoutAlign="start center" [fxShow]="true" routerLink="/home/admin" routerLinkActive="active" *ngIf="page.admin">
                 <mat-icon class="font-size34px">pages</mat-icon>
                 <div class="top7px relative">
                   Admin</div>
@@ -67,11 +65,7 @@
                 <div class="white-color">
                   Dashboard</div>
               </div>
-              <div fxLayout="column wrap" class="cursor-pointer toolbar-hover" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="/home/section" routerLinkActive="activeHeader">
-                <div class="white-color">
-                  Section</div>
-              </div>
-              <div fxLayout="column wrap" class="cursor-pointer toolbar-hover" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="/home/admin" routerLinkActive="activeHeader">
+              <div fxLayout="column wrap" class="cursor-pointer toolbar-hover" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="/home/admin" routerLinkActive="activeHeader" *ngIf="page.admin">
                 <div class="white-color">
                   Admin </div>
               </div>

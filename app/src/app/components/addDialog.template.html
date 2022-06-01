@@ -42,7 +42,7 @@
               <mat-error align="start" *ngIf="addUser.controls[&apos;date&apos;]?.errors?.required">Date is required</mat-error>
             </mat-form-field>
             <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-              <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="end stretch" [fxShow]="true"><button mat-raised-button [mat-dialog-close]="addUser.value">Add user</button><button mat-raised-button mat-dialog-close>Cancel</button></div>
+              <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="end stretch" [fxShow]="true"><button mat-raised-button [mat-dialog-close]="addUser.value" [disabled]="addUser.invalid">Add user</button><button mat-raised-button mat-dialog-close>Cancel</button></div>
             </div>
           </div>
         </form>

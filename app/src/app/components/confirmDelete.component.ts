@@ -15,17 +15,17 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
-import { FormControl, Validators, FormBuilder } from '@angular/forms'; //_splitter_
+import { MAT_DIALOG_DATA } from '@angular/material/dialog'; //_splitter_
 //append_imports_end
 
 @Component({
-  selector: 'bh-addEmployeeDialog',
-  templateUrl: './addEmployeeDialog.template.html',
+  selector: 'bh-confirmDelete',
+  templateUrl: './confirmDelete.template.html',
   providers: [
     //appendnew_element_providers
   ],
 })
-export class addEmployeeDialogComponent {
+export class confirmDeleteComponent {
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -34,7 +34,6 @@ export class addEmployeeDialogComponent {
   ) {
     this.__page_injector__.get(SDPageCommonService).addPageDefaults(this.page);
     this.registerListeners();
-    this.page.dep.FormBuilder = this.__page_injector__.get(FormBuilder); //FormBuilder
     //appendnew_element_inject
   }
 
@@ -65,14 +64,51 @@ export class addEmployeeDialogComponent {
     }
   }
 
-  //appendnew_flow_addEmployeeDialogComponent_start
+  yes(...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_qCuOVYFV0MWmehkG(bh);
+      //appendnew_next_yes
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Qz4bN4RpZJNt8JtR');
+    }
+  }
+
+  //appendnew_flow_confirmDeleteComponent_start
 
   sd_AdOli7BYWoKcR9sz(bh) {
     try {
+      bh = this.sd_q6rAas6xm3V4WTgo(bh);
       //appendnew_next_sd_AdOli7BYWoKcR9sz
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_AdOli7BYWoKcR9sz');
+    }
+  }
+
+  sd_q6rAas6xm3V4WTgo(bh) {
+    try {
+      this.page.id = this.__page_injector__.get(MAT_DIALOG_DATA);
+
+      //appendnew_next_sd_q6rAas6xm3V4WTgo
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_q6rAas6xm3V4WTgo');
+    }
+  }
+
+  sd_qCuOVYFV0MWmehkG(bh) {
+    try {
+      const page = this.page;
+      console.log(page.id, 'matric');
+      //appendnew_next_sd_qCuOVYFV0MWmehkG
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_qCuOVYFV0MWmehkG');
     }
   }
 
@@ -98,5 +134,5 @@ export class addEmployeeDialogComponent {
       throw e;
     }
   }
-  //appendnew_flow_addEmployeeDialogComponent_Catch
+  //appendnew_flow_confirmDeleteComponent_Catch
 }

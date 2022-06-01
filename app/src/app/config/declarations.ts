@@ -15,10 +15,12 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-confirmDeleteAttendComponent
+import { confirmDeleteAttendComponent } from '../components/confirmDeleteAttend.component';
+//CORE_REFERENCE_IMPORT-confirmDeleteComponent
+import { confirmDeleteComponent } from '../components/confirmDelete.component';
 //CORE_REFERENCE_IMPORT-editEmployeeDialogComponent
 import { editEmployeeDialogComponent } from '../components/editEmployeeDialog.component';
-//CORE_REFERENCE_IMPORT-addEmployeeDialogComponent
-import { addEmployeeDialogComponent } from '../components/addEmployeeDialog.component';
 //CORE_REFERENCE_IMPORT-editDialogComponent
 import { editDialogComponent } from '../components/editDialog.component';
 //CORE_REFERENCE_IMPORT-addDialogComponent
@@ -29,8 +31,6 @@ import { attendanceComponent } from '../components/attendance.component';
 import { employeeComponent } from '../components/employee.component';
 //CORE_REFERENCE_IMPORT-adminComponent
 import { adminComponent } from '../components/admin.component';
-//CORE_REFERENCE_IMPORT-sectionComponent
-import { sectionComponent } from '../components/section.component';
 //CORE_REFERENCE_IMPORT-dashboardComponent
 import { dashboardComponent } from '../components/dashboard.component';
 //CORE_REFERENCE_IMPORT-homeComponent
@@ -69,10 +69,12 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-confirmDeleteAttendComponent
+  confirmDeleteAttendComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-confirmDeleteComponent
+  confirmDeleteComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-editEmployeeDialogComponent
   editEmployeeDialogComponent,
-  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-addEmployeeDialogComponent
-  addEmployeeDialogComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-editDialogComponent
   editDialogComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-addDialogComponent
@@ -83,8 +85,6 @@ export const appDeclarations = [
   employeeComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-adminComponent
   adminComponent,
-  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-sectionComponent
-  sectionComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-dashboardComponent
   dashboardComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-homeComponent
@@ -122,7 +122,6 @@ export const appRoutes = [
     component: homeComponent,
     children: [
       { path: 'dashboard', component: dashboardComponent },
-      { path: 'section', component: sectionComponent },
       { path: 'admin', component: adminComponent },
       { path: 'employee', component: employeeComponent },
       { path: 'attendance', component: attendanceComponent },

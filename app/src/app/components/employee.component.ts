@@ -15,9 +15,10 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import { crudOperation } from 'app/sd-services/crudOperation'; //_splitter_
 import { MatDialog } from '@angular/material/dialog'; //_splitter_
-import { addEmployeeDialogComponent } from './addEmployeeDialog.component'; //_splitter_
 import { editEmployeeDialogComponent } from './editEmployeeDialog.component'; //_splitter_
+import { confirmDeleteComponent } from './confirmDelete.component'; //_splitter_
 import { MatSort, SortDirection } from '@angular/material/sort'; //_splitter_
 import { MatTableDataSource } from '@angular/material/table'; //_splitter_
 //append_imports_end
@@ -29,9 +30,7 @@ import { MatTableDataSource } from '@angular/material/table'; //_splitter_
     //appendnew_element_providers
   ],
 })
-export class employeeComponent implements AfterViewInit {
-  @ViewChild(MatSort)
-  public MatSort: any = null;
+export class employeeComponent {
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -70,43 +69,47 @@ export class employeeComponent implements AfterViewInit {
     }
   }
 
-  ngAfterViewInit() {
+  editEmployeeUser(data: any = undefined, ...others) {
     try {
       var bh: any = this.__page_injector__
         .get(SDPageCommonService)
         .constructFlowObject(this);
-      bh = this.sd_xKCCTWKzvgDN0rx7_1(bh);
-      //appendnew_next_ngAfterViewInit
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_6UHTexLv6v1ENRss');
-    }
-  }
-
-  openDialog(...others) {
-    try {
-      var bh: any = this.__page_injector__
-        .get(SDPageCommonService)
-        .constructFlowObject(this);
-      bh.input = {};
-      bh.local = {};
-      bh = this.sd_uOggoorUrlPY7gnb(bh);
-      //appendnew_next_openDialog
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Aw5D07XhV9y5mwLI');
-    }
-  }
-
-  editEmployeeUser(...others) {
-    try {
-      var bh: any = this.__page_injector__
-        .get(SDPageCommonService)
-        .constructFlowObject(this);
-      bh.input = {};
-      bh.local = {};
+      bh.input = { data: data };
+      bh.local = { result: undefined };
       bh = this.sd_xHMpMIrxvalqRh3U(bh);
       //appendnew_next_editEmployeeUser
+      return bh.local.result;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_3xlKQK5IIj8vbBIr');
+    }
+  }
+
+  clockIn(form: any = undefined, ...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { form: form };
+      bh.local = { result: undefined };
+      bh = this.sd_UDk4KZcgHfWCV4LX(bh);
+      //appendnew_next_clockIn
+      return bh.local.result;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_BdSkf0orNbOhqN9m');
+    }
+  }
+
+  deleteAttendance(id: any = undefined, ...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { id: id };
+      bh.local = {};
+      bh = this.sd_NPThVmWzfarv01qL(bh);
+      //appendnew_next_deleteAttendance
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_xDM9IfvLYGFQzkg7');
     }
   }
 
@@ -114,7 +117,11 @@ export class employeeComponent implements AfterViewInit {
 
   sd_1CMz1XpdNhTdCSkb(bh) {
     try {
-      bh = this.sd_eJuzOUTYKNgXaqdz_1(bh);
+      this.page.attendance = undefined;
+      this.page.clockInObj = undefined;
+      this.page.loggedInUser = undefined;
+      this.page.allAttendance = [];
+      bh = this.sd_w6SeZQOM8i9z9AsI(bh);
       //appendnew_next_sd_1CMz1XpdNhTdCSkb
       return bh;
     } catch (e) {
@@ -122,141 +129,150 @@ export class employeeComponent implements AfterViewInit {
     }
   }
 
-  sd_eJuzOUTYKNgXaqdz_1(bh) {
+  sd_w6SeZQOM8i9z9AsI(bh) {
     try {
       const page = this.page;
-      bh.local.dataSource = new MatTableDataSource([
+      page.clockInObj = [
         {
-          position: 1,
-          name: 'Hydrogen',
-          weight: 1.0079,
-          symbol: 'H',
+          attendance: false,
         },
-        {
-          position: 2,
-          name: 'Helium',
-          weight: 4.0026,
-          symbol: 'He',
-        },
-        {
-          position: 3,
-          name: 'Lithium',
-          weight: 6.941,
-          symbol: 'Li',
-        },
-        {
-          position: 4,
-          name: 'Beryllium',
-          weight: 9.0122,
-          symbol: 'Be',
-        },
-        {
-          position: 5,
-          name: 'Boron',
-          weight: 10.811,
-          symbol: 'B',
-        },
-        {
-          position: 6,
-          name: 'Carbon',
-          weight: 12.0107,
-          symbol: 'C',
-        },
-        {
-          position: 7,
-          name: 'Nitrogen',
-          weight: 14.0067,
-          symbol: 'N',
-        },
-        {
-          position: 8,
-          name: 'Oxygen',
-          weight: 15.9994,
-          symbol: 'O',
-        },
-        {
-          position: 9,
-          name: 'Fluorine',
-          weight: 18.9984,
-          symbol: 'F',
-        },
-        {
-          position: 10,
-          name: 'Neon',
-          weight: 20.1797,
-          symbol: 'Ne',
-        },
-      ]);
-      bh = this.sd_E9QbOlnVduPNV5MO_1(bh);
-      //appendnew_next_sd_eJuzOUTYKNgXaqdz_1
+      ];
+
+      let email = JSON.parse(sessionStorage.getItem('user')).email;
+      page.owner = {
+        email,
+      };
+      page.admin = email.includes('admin');
+      page.loggedInUser = JSON.parse(sessionStorage.getItem('user'));
+      bh = this.sd_mvt2EZhQELk5BoW3(bh);
+      //appendnew_next_sd_w6SeZQOM8i9z9AsI
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_97KbZKRihHEATcS4');
+      return this.errorHandler(bh, e, 'sd_w6SeZQOM8i9z9AsI');
     }
   }
 
-  sd_E9QbOlnVduPNV5MO_1(bh) {
+  async sd_mvt2EZhQELk5BoW3(bh) {
     try {
-      this.page.tableData = bh.local.dataSource;
-      //appendnew_next_sd_E9QbOlnVduPNV5MO_1
+      const crudOperationInstance: crudOperation =
+        this.__page_injector__.get(crudOperation);
+
+      let outputVariables = await crudOperationInstance.getUsers();
+      this.page.users = outputVariables.local.result;
+
+      bh = this.sd_eGoF73aHv0FgQNwL(bh);
+      //appendnew_next_sd_mvt2EZhQELk5BoW3
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_c656u8WaZkehz5za');
+      return await this.errorHandler(bh, e, 'sd_mvt2EZhQELk5BoW3');
     }
   }
 
-  sd_xKCCTWKzvgDN0rx7_1(bh) {
-    try {
-      bh.pageViews = Object.assign(bh.pageViews || {}, {
-        MatSort: this.MatSort,
-      });
-      bh = this.sd_2VNGqvcKee34lvOz_1(bh);
-      //appendnew_next_sd_xKCCTWKzvgDN0rx7_1
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_ynvSeOBdWFhc6Gra');
-    }
-  }
-
-  sd_2VNGqvcKee34lvOz_1(bh) {
+  sd_eGoF73aHv0FgQNwL(bh) {
     try {
       const page = this.page;
-      this.page.tableData.sort = this.MatSort;
-      //appendnew_next_sd_2VNGqvcKee34lvOz_1
+      console.log(page.users, 'Get Users');
+      let user = JSON.parse(sessionStorage.getItem('user'));
+
+      page.attendance = {
+        email: user.email,
+        currentDate: new Date().toDateString().slice(0, 10),
+        collection: 'attendance',
+      };
+      // page.tableData =  page.users;
+
+      bh = this.sd_mkk9Tv18NsFsoUpT(bh);
+      //appendnew_next_sd_eGoF73aHv0FgQNwL
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_J6T5ZTCkFjhqzGIe');
+      return this.errorHandler(bh, e, 'sd_eGoF73aHv0FgQNwL');
     }
   }
 
-  sd_uOggoorUrlPY7gnb(bh) {
+  async sd_mkk9Tv18NsFsoUpT(bh) {
     try {
-      const addEmployeeDialogDialog = this.__page_injector__.get(MatDialog);
-      const addEmployeeDialogDialogRef = addEmployeeDialogDialog.open(
-        addEmployeeDialogComponent,
-        { minWidth: '500px' }
+      const crudOperationInstance: crudOperation =
+        this.__page_injector__.get(crudOperation);
+
+      let outputVariables = await crudOperationInstance.clockIn(
+        this.page.attendance
       );
-      addEmployeeDialogDialogRef.afterClosed().subscribe((event) => {
-        this.page.res = event;
-        this.sd_jhhmWnlrt3FMlqUR(bh);
+      this.page.clockInObj = outputVariables.local.result;
 
-        //appendnew_next_sd_uOggoorUrlPY7gnb;
-      });
-
+      bh = this.sd_RBpnhB9kKOaKhHta(bh);
+      //appendnew_next_sd_mkk9Tv18NsFsoUpT
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_uOggoorUrlPY7gnb');
+      return await this.errorHandler(bh, e, 'sd_mkk9Tv18NsFsoUpT');
     }
   }
 
-  sd_jhhmWnlrt3FMlqUR(bh) {
+  sd_RBpnhB9kKOaKhHta(bh) {
     try {
       const page = this.page;
-      console.log(page.res, 'add employee');
-      //appendnew_next_sd_jhhmWnlrt3FMlqUR
+      page.clockInObj;
+      console.log(page.clockInObj, 'ZZZZZZZZZZZ');
+      bh = this.sd_NmKQRDdRsRkhB5NS(bh);
+      //appendnew_next_sd_RBpnhB9kKOaKhHta
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_jhhmWnlrt3FMlqUR');
+      return this.errorHandler(bh, e, 'sd_RBpnhB9kKOaKhHta');
+    }
+  }
+
+  async sd_NmKQRDdRsRkhB5NS(bh) {
+    try {
+      const crudOperationInstance: crudOperation =
+        this.__page_injector__.get(crudOperation);
+
+      let outputVariables = await crudOperationInstance.getaUserAttendance(
+        this.page.owner
+      );
+      this.page.aUserAttendance = outputVariables.local.result;
+
+      bh = this.sd_s5hcVGz2eqpso2jN(bh);
+      //appendnew_next_sd_NmKQRDdRsRkhB5NS
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_NmKQRDdRsRkhB5NS');
+    }
+  }
+
+  async sd_s5hcVGz2eqpso2jN(bh) {
+    try {
+      const crudOperationInstance: crudOperation =
+        this.__page_injector__.get(crudOperation);
+
+      let outputVariables = await crudOperationInstance.getAllAttendance();
+      this.page.allAttendance = outputVariables.local.result;
+
+      bh = this.sd_lH5jZAuxC0rl7imo(bh);
+      //appendnew_next_sd_s5hcVGz2eqpso2jN
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_s5hcVGz2eqpso2jN');
+    }
+  }
+
+  sd_lH5jZAuxC0rl7imo(bh) {
+    try {
+      const page = this.page; // page.tableData = page.allAttendance;
+      console.log(page.aUserAttendance, 'BBBBBBBBBBBBBB');
+      console.log(page.allAttendance, 'PPPPPPPPPPPPPP');
+
+      page.userfromSessionstorage = JSON.parse(sessionStorage.getItem('user'));
+      console.log(page.userfromSessionstorage.email, 'ssssssss');
+
+      if (page.userfromSessionstorage.email.includes('admin')) {
+        page.tableData = page.allAttendance;
+      } else {
+        page.tableData = page.aUserAttendance;
+      }
+
+      //appendnew_next_sd_lH5jZAuxC0rl7imo
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_lH5jZAuxC0rl7imo');
     }
   }
 
@@ -265,7 +281,7 @@ export class employeeComponent implements AfterViewInit {
       const editEmployeeDialogDialog = this.__page_injector__.get(MatDialog);
       const editEmployeeDialogDialogRef = editEmployeeDialogDialog.open(
         editEmployeeDialogComponent,
-        { minWidth: ' 500px' }
+        { data: bh.input.data, minWidth: ' 500px' }
       );
       editEmployeeDialogDialogRef.afterClosed().subscribe((event) => {
         this.page.res = event;
@@ -283,11 +299,393 @@ export class employeeComponent implements AfterViewInit {
   sd_GFcN642lf22ZaYxr(bh) {
     try {
       const page = this.page;
-      console.log(page.res);
+      console.log(page.res, 'romise');
+      page.result = {
+        fullName: page.res.fullName,
+        email: page.res.email,
+        currentDate: new Date().toDateString().slice(0, 10),
+        attendance: page.res.attendance.toLowerCase() === 'true',
+      };
+      console.log(page.result, 'Hello');
+      bh = this.sd_rY9cWgonXCI7953L(bh);
       //appendnew_next_sd_GFcN642lf22ZaYxr
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_GFcN642lf22ZaYxr');
+    }
+  }
+
+  async sd_rY9cWgonXCI7953L(bh) {
+    try {
+      let otherwiseFlag = true;
+      if (
+        this.sdService.operators['nempty'](
+          this.page.result,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_Iailijv5aTNuqPXg(bh);
+        otherwiseFlag = false;
+      }
+      if (
+        this.sdService.operators['else'](
+          otherwiseFlag,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_4BDdGon1ZFWPEDIg(bh);
+        otherwiseFlag = false;
+      }
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_rY9cWgonXCI7953L');
+    }
+  }
+
+  async sd_Iailijv5aTNuqPXg(bh) {
+    try {
+      const crudOperationInstance: crudOperation =
+        this.__page_injector__.get(crudOperation);
+
+      let outputVariables = await crudOperationInstance.editAttendance(
+        this.page.result
+      );
+      this.page.data = outputVariables.local.result;
+
+      bh = this.sd_xC30hfN9IuhRjU7z(bh);
+      //appendnew_next_sd_Iailijv5aTNuqPXg
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_Iailijv5aTNuqPXg');
+    }
+  }
+
+  async sd_xC30hfN9IuhRjU7z(bh) {
+    try {
+      const crudOperationInstance: crudOperation =
+        this.__page_injector__.get(crudOperation);
+
+      let outputVariables = await crudOperationInstance.getaUserAttendance(
+        this.page.owner
+      );
+      this.page.aUserAttendance = outputVariables.local.result;
+
+      bh = this.sd_Reh3nAhJEsyVt9zI(bh);
+      //appendnew_next_sd_xC30hfN9IuhRjU7z
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_xC30hfN9IuhRjU7z');
+    }
+  }
+
+  async sd_Reh3nAhJEsyVt9zI(bh) {
+    try {
+      const crudOperationInstance: crudOperation =
+        this.__page_injector__.get(crudOperation);
+
+      let outputVariables = await crudOperationInstance.getAllAttendance();
+      this.page.allAttendance = outputVariables.local.result;
+
+      bh = this.sd_tgWKQAipH9q9vTyg(bh);
+      //appendnew_next_sd_Reh3nAhJEsyVt9zI
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_Reh3nAhJEsyVt9zI');
+    }
+  }
+
+  sd_tgWKQAipH9q9vTyg(bh) {
+    try {
+      const page = this.page; // page.tableData = page.allAttendance;
+      console.log(page.aUserAttendance, 'BBBBBBBBBBBBBB');
+      console.log(page.allAttendance, 'PPPPPPPPPPPPPP');
+
+      page.userfromSessionstorage = JSON.parse(sessionStorage.getItem('user'));
+      console.log(page.userfromSessionstorage.email, 'ssssssss');
+
+      if (page.userfromSessionstorage.email.includes('admin')) {
+        page.tableData = page.allAttendance;
+      } else {
+        page.tableData = page.aUserAttendance;
+      }
+
+      //appendnew_next_sd_tgWKQAipH9q9vTyg
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_tgWKQAipH9q9vTyg');
+    }
+  }
+
+  sd_4BDdGon1ZFWPEDIg(bh) {
+    try {
+      const page = this.page;
+      return false;
+      //appendnew_next_sd_4BDdGon1ZFWPEDIg
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_4BDdGon1ZFWPEDIg');
+    }
+  }
+
+  sd_UDk4KZcgHfWCV4LX(bh) {
+    try {
+      const page = this.page;
+      let user = JSON.parse(sessionStorage.getItem('user'));
+
+      page.attendance = {
+        fullName: `${user.firstName} ${user.lastName}`,
+        email: user.email,
+        currentDate: new Date().toDateString().slice(0, 10),
+        attendance: true,
+        collection: 'attendance',
+      };
+      console.log(page.attendance);
+      bh = this.sd_WB3vPkspJvQrZaBt(bh);
+      //appendnew_next_sd_UDk4KZcgHfWCV4LX
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_UDk4KZcgHfWCV4LX');
+    }
+  }
+
+  async sd_WB3vPkspJvQrZaBt(bh) {
+    try {
+      const crudOperationInstance: crudOperation =
+        this.__page_injector__.get(crudOperation);
+
+      let outputVariables = await crudOperationInstance.addAttendance(
+        this.page.attendance
+      );
+      bh.local.data = outputVariables.local.result;
+
+      bh = this.sd_7VTcQaMvWOKQAakV(bh);
+      //appendnew_next_sd_WB3vPkspJvQrZaBt
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_WB3vPkspJvQrZaBt');
+    }
+  }
+
+  sd_7VTcQaMvWOKQAakV(bh) {
+    try {
+      const page = this.page;
+      console.log(bh, 'AAAAAAAAAA');
+      bh = this.sd_K3iidLvwNKrlRIk7(bh);
+      //appendnew_next_sd_7VTcQaMvWOKQAakV
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_7VTcQaMvWOKQAakV');
+    }
+  }
+
+  async sd_K3iidLvwNKrlRIk7(bh) {
+    try {
+      const crudOperationInstance: crudOperation =
+        this.__page_injector__.get(crudOperation);
+
+      let outputVariables = await crudOperationInstance.getaUserAttendance(
+        this.page.owner
+      );
+      this.page.aUserAttendance = outputVariables.local.result;
+
+      bh = this.sd_PdxWphJSFL6ZQoYi(bh);
+      //appendnew_next_sd_K3iidLvwNKrlRIk7
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_K3iidLvwNKrlRIk7');
+    }
+  }
+
+  async sd_PdxWphJSFL6ZQoYi(bh) {
+    try {
+      const crudOperationInstance: crudOperation =
+        this.__page_injector__.get(crudOperation);
+
+      let outputVariables = await crudOperationInstance.getAllAttendance();
+      this.page.allAttendance = outputVariables.local.result;
+
+      bh = this.sd_e9o9IZoPG2Jhm7dR(bh);
+      //appendnew_next_sd_PdxWphJSFL6ZQoYi
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_PdxWphJSFL6ZQoYi');
+    }
+  }
+
+  sd_e9o9IZoPG2Jhm7dR(bh) {
+    try {
+      const page = this.page; // page.tableData = page.allAttendance;
+      console.log(page.aUserAttendance, 'BBBBBBBBBBBBBB');
+      console.log(page.allAttendance, 'PPPPPPPPPPPPPP');
+
+      page.userfromSessionstorage = JSON.parse(sessionStorage.getItem('user'));
+      console.log(page.userfromSessionstorage.email, 'ssssssss');
+
+      if (page.userfromSessionstorage.email.includes('admin')) {
+        page.tableData = page.allAttendance;
+      } else {
+        page.tableData = page.aUserAttendance;
+      }
+
+      //appendnew_next_sd_e9o9IZoPG2Jhm7dR
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_e9o9IZoPG2Jhm7dR');
+    }
+  }
+
+  sd_NPThVmWzfarv01qL(bh) {
+    try {
+      const confirmDeleteDialog = this.__page_injector__.get(MatDialog);
+      const confirmDeleteDialogRef = confirmDeleteDialog.open(
+        confirmDeleteComponent,
+        { data: bh.input.id, minWidth: '500px' }
+      );
+      confirmDeleteDialogRef.afterClosed().subscribe((event) => {
+        this.page.deleteRes = event;
+        this.sd_IgAciYVmSJovurcs(bh);
+
+        //appendnew_next_sd_NPThVmWzfarv01qL;
+      });
+
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_NPThVmWzfarv01qL');
+    }
+  }
+
+  async sd_IgAciYVmSJovurcs(bh) {
+    try {
+      let otherwiseFlag = true;
+      if (
+        this.sdService.operators['nempty'](
+          this.page.deleteRes,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_sZYvhBlw0oJwnNxa(bh);
+        otherwiseFlag = false;
+      }
+      if (
+        this.sdService.operators['else'](
+          otherwiseFlag,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_KqFaERkSzfcpQ5Zd(bh);
+        otherwiseFlag = false;
+      }
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_IgAciYVmSJovurcs');
+    }
+  }
+
+  sd_sZYvhBlw0oJwnNxa(bh) {
+    try {
+      const page = this.page;
+      console.log(page.deleteRes, 'One One One One One One');
+      bh = this.sd_UvkD9D2sSHXZWLjy(bh);
+      //appendnew_next_sd_sZYvhBlw0oJwnNxa
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_sZYvhBlw0oJwnNxa');
+    }
+  }
+
+  async sd_UvkD9D2sSHXZWLjy(bh) {
+    try {
+      const crudOperationInstance: crudOperation =
+        this.__page_injector__.get(crudOperation);
+
+      let outputVariables = await crudOperationInstance.deleteAttendance(
+        bh.input.id
+      );
+
+      bh = this.sd_4SZTQ6jZtZu9ikSG(bh);
+      //appendnew_next_sd_UvkD9D2sSHXZWLjy
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_UvkD9D2sSHXZWLjy');
+    }
+  }
+
+  async sd_4SZTQ6jZtZu9ikSG(bh) {
+    try {
+      const crudOperationInstance: crudOperation =
+        this.__page_injector__.get(crudOperation);
+
+      let outputVariables = await crudOperationInstance.getaUserAttendance(
+        this.page.owner
+      );
+      this.page.aUserAttendance = outputVariables.local.result;
+
+      bh = this.sd_cK7wxvfmwhcPbfkM(bh);
+      //appendnew_next_sd_4SZTQ6jZtZu9ikSG
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_4SZTQ6jZtZu9ikSG');
+    }
+  }
+
+  async sd_cK7wxvfmwhcPbfkM(bh) {
+    try {
+      const crudOperationInstance: crudOperation =
+        this.__page_injector__.get(crudOperation);
+
+      let outputVariables = await crudOperationInstance.getAllAttendance();
+      this.page.allAttendance = outputVariables.local.result;
+
+      bh = this.sd_GG4MUfz0v3QBF3y6(bh);
+      //appendnew_next_sd_cK7wxvfmwhcPbfkM
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_cK7wxvfmwhcPbfkM');
+    }
+  }
+
+  sd_GG4MUfz0v3QBF3y6(bh) {
+    try {
+      const page = this.page; // page.tableData = page.allAttendance;
+      console.log(page.aUserAttendance, 'BBBBBBBBBBBBBB');
+      console.log(page.allAttendance, 'PPPPPPPPPPPPPP');
+
+      page.userfromSessionstorage = JSON.parse(sessionStorage.getItem('user'));
+      console.log(page.userfromSessionstorage.email, 'ssssssss');
+
+      if (page.userfromSessionstorage.email.includes('admin')) {
+        page.tableData = page.allAttendance;
+      } else {
+        page.tableData = page.aUserAttendance;
+      }
+
+      //appendnew_next_sd_GG4MUfz0v3QBF3y6
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_GG4MUfz0v3QBF3y6');
+    }
+  }
+
+  sd_KqFaERkSzfcpQ5Zd(bh) {
+    try {
+      const page = this.page;
+      console.log(false);
+      return false;
+
+      //appendnew_next_sd_KqFaERkSzfcpQ5Zd
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_KqFaERkSzfcpQ5Zd');
     }
   }
 

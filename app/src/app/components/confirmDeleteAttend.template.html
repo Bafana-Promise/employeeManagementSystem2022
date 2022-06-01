@@ -1,0 +1,14 @@
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" fxFill>
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="19px" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
+      <div class="font-weight700">
+        Are you sure you want to <span class="red-color">Delete !</span></div>
+    </div>
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" fxLayoutGap="7px" fxLayoutAlign="center stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="login-btn-border23px btn-border-green green-color" [mat-dialog-close]="page.id" (click)="yes()">Yes</button></div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="login-btn-border23px btn-border-red red-color" mat-dialog-close>No</button></div>
+      </div>
+    </div>
+  </div>
+</div>
