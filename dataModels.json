@@ -114,34 +114,28 @@
         "dataSource": "neutrinos-training-rt",
         "fields": [
             {
-                "name": "firstName",
+                "name": "fullName",
                 "fieldType": 2,
                 "isArray": false,
                 "type": "string"
             },
             {
-                "name": "lastName",
+                "name": "email",
                 "fieldType": 2,
                 "isArray": false,
                 "type": "string"
             },
             {
-                "name": "rollNo",
-                "fieldType": 2,
+                "name": "attandence",
+                "fieldType": 4,
                 "isArray": false,
-                "type": "string"
+                "type": "boolean"
             },
             {
-                "name": "date",
+                "name": "currentDate",
                 "fieldType": 3,
                 "isArray": false,
                 "type": "Date"
-            },
-            {
-                "name": "section",
-                "fieldType": 2,
-                "isArray": false,
-                "type": "string"
             }
         ]
     },
@@ -152,34 +146,28 @@
         "dataSource": "neutrinos-training-rt",
         "fields": [
             {
-                "name": "firstName",
+                "name": "fullName",
                 "fieldType": 2,
                 "isArray": false,
                 "type": "string"
             },
             {
-                "name": "lastName",
+                "name": "email",
                 "fieldType": 2,
                 "isArray": false,
                 "type": "string"
             },
             {
-                "name": "rollOn",
-                "fieldType": 2,
-                "isArray": false,
-                "type": "string"
-            },
-            {
-                "name": "date",
+                "name": "currentDate",
                 "fieldType": 3,
                 "isArray": false,
                 "type": "Date"
             },
             {
-                "name": "section",
-                "fieldType": 2,
+                "name": "attendance",
+                "fieldType": 4,
                 "isArray": false,
-                "type": "string"
+                "type": "boolean"
             }
         ]
     }

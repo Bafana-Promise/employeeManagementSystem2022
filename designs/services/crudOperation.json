@@ -1,0 +1,1004 @@
+[
+    {
+        "id": "sd_YYmVHxmaRPx28YeD",
+        "type": "tab",
+        "createdDate": "2022-05-22T17:20:51.515Z",
+        "label": "crudOperation",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "crudOperation",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_Qmgr897LXIlsREbR",
+        "type": "Start",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "addUser",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "form",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "addUser",
+        "category": "General",
+        "x": 65,
+        "y": 40,
+        "wires": [
+            [
+                "sd_XsA3KoSGSmJBJyo1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "crudOperation"
+    },
+    {
+        "id": "sd_XsA3KoSGSmJBJyo1",
+        "type": "Script",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.result = {}",
+        "functionName": "sd_XsA3KoSGSmJBJyo1",
+        "category": "Function",
+        "x": 165,
+        "y": 40,
+        "wires": [
+            [
+                "sd_rA0zqAVpFZIsRITt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true,
+        "serviceName": "crudOperation"
+    },
+    {
+        "id": "sd_rA0zqAVpFZIsRITt",
+        "type": "CallSSDApi",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlValue": "addAdmin",
+        "url": "addAdmin",
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBody": "bh.input.form",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "form"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "inputVariables": [],
+        "inputParams": [],
+        "functionName": "sd_rA0zqAVpFZIsRITt",
+        "category": "HTTP",
+        "x": 265,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true,
+        "serviceName": "crudOperation"
+    },
+    {
+        "id": "sd_MKW7pttNe03pvBjK",
+        "type": "Start",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "loginUser",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "user",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "loginUser",
+        "category": "General",
+        "x": 345,
+        "y": 40,
+        "wires": [
+            [
+                "sd_MsSrtVAgkT5OeFjp"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "crudOperation"
+    },
+    {
+        "id": "sd_MsSrtVAgkT5OeFjp",
+        "type": "CallSSDApi",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlValue": "loginAdmin",
+        "url": "loginAdmin",
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBody": "bh.input.user",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "user"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "inputVariables": [],
+        "inputParams": [],
+        "functionName": "sd_MsSrtVAgkT5OeFjp",
+        "category": "HTTP",
+        "x": 465,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true,
+        "serviceName": "crudOperation"
+    },
+    {
+        "id": "sd_iXpvlIKl6xP0ibbD",
+        "type": "Start",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "editUser",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "body",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "editUser",
+        "category": "General",
+        "x": 45,
+        "y": 120,
+        "wires": [
+            [
+                "sd_AWt6fHG8e99AFPQj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "crudOperation"
+    },
+    {
+        "id": "sd_AWt6fHG8e99AFPQj",
+        "type": "Script",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.input.email = bh.input.body.email",
+        "functionName": "sd_AWt6fHG8e99AFPQj",
+        "category": "Function",
+        "x": 165,
+        "y": 120,
+        "wires": [
+            [
+                "sd_kjBkLHU6TDgZskYa"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true,
+        "serviceName": "crudOperation"
+    },
+    {
+        "id": "sd_s2icUHfGmCtwKLtj",
+        "type": "Start",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "deleteUser",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "id",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "deleteUser",
+        "category": "General",
+        "x": 405,
+        "y": 120,
+        "wires": [
+            [
+                "sd_HgvKgR4K8MbLhTyW"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "crudOperation"
+    },
+    {
+        "id": "sd_k7Ts2BAcgHyDeN0V",
+        "type": "Start",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "getUsers",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getUsers",
+        "category": "General",
+        "x": 605,
+        "y": 200,
+        "wires": [
+            [
+                "sd_4JkqBnb7TuziwLQq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "crudOperation"
+    },
+    {
+        "id": "sd_kjBkLHU6TDgZskYa",
+        "type": "CallSSDApi",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "put",
+        "methodMappingObj": {},
+        "urlValue": "editAdmin",
+        "url": "editAdmin/:email",
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBody": "bh.input.body",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "inputVariables": [
+            {
+                "key": "email",
+                "valueType": "bh.input",
+                "value": "email"
+            }
+        ],
+        "inputParams": [
+            "bh.input.email"
+        ],
+        "functionName": "sd_kjBkLHU6TDgZskYa",
+        "category": "HTTP",
+        "x": 325,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true,
+        "serviceName": "crudOperation"
+    },
+    {
+        "id": "sd_HgvKgR4K8MbLhTyW",
+        "type": "CallSSDApi",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "delete",
+        "methodMappingObj": {},
+        "urlValue": "deleteAdmin",
+        "url": "deleteAdmin/:id",
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBody": "bh.input.id",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "id"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "inputVariables": [
+            {
+                "key": "id",
+                "valueType": "bh.input",
+                "value": "id"
+            }
+        ],
+        "inputParams": [
+            "bh.input.id"
+        ],
+        "functionName": "sd_HgvKgR4K8MbLhTyW",
+        "category": "HTTP",
+        "x": 565,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_4JkqBnb7TuziwLQq",
+        "type": "CallSSDApi",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlValue": "getAdmin",
+        "url": "getAdmin",
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "inputVariables": [],
+        "inputParams": [],
+        "functionName": "sd_4JkqBnb7TuziwLQq",
+        "category": "HTTP",
+        "x": 785,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_mkM8nvRHIz9Q96Ui",
+        "type": "Start",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "addAttendance",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "form",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "addAttendance",
+        "category": "General",
+        "x": 45,
+        "y": 220,
+        "wires": [
+            [
+                "sd_ItPZFIqqeOUVNM37"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "crudOperation"
+    },
+    {
+        "id": "sd_ItPZFIqqeOUVNM37",
+        "type": "CallSSDApi",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlValue": "addAttendance",
+        "url": "addAttendance",
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBody": "bh.input.form",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "form"
+        },
+        "resultMapping": "bh.local.result.ops",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result.ops"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "inputVariables": [],
+        "inputParams": [],
+        "functionName": "sd_ItPZFIqqeOUVNM37",
+        "category": "HTTP",
+        "x": 225,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_YQ8JVe65KGnTwayi",
+        "type": "Start",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "clockIn",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "body",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "clockIn",
+        "category": "General",
+        "x": 325,
+        "y": 220,
+        "wires": [
+            [
+                "sd_89hE9o6vDecWM5KO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "crudOperation"
+    },
+    {
+        "id": "sd_89hE9o6vDecWM5KO",
+        "type": "CallSSDApi",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlValue": "checkClockIn",
+        "url": "checkClockIn",
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBody": "bh.input.body",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "inputVariables": [],
+        "inputParams": [],
+        "functionName": "sd_89hE9o6vDecWM5KO",
+        "category": "HTTP",
+        "x": 485,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_UBzzlZ851jTYoPBW",
+        "type": "Start",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "getAllAttendance",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getAllAttendance",
+        "category": "General",
+        "x": 80,
+        "y": 320,
+        "wires": [
+            [
+                "sd_NibmQIgWiGrKJzkt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "crudOperation"
+    },
+    {
+        "id": "sd_NibmQIgWiGrKJzkt",
+        "type": "CallSSDApi",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlValue": "allAttendance",
+        "url": "allAttendance",
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "inputVariables": [],
+        "inputParams": [],
+        "functionName": "sd_NibmQIgWiGrKJzkt",
+        "category": "HTTP",
+        "x": 185,
+        "y": 320,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_RHrLfLkjsbBsR6O3",
+        "type": "Start",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "getaUserAttendance",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "userEmail",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getaUserAttendance",
+        "category": "General",
+        "x": 265,
+        "y": 320,
+        "wires": [
+            [
+                "sd_xpF5Ov7Jn7DKEudr"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "crudOperation"
+    },
+    {
+        "id": "sd_xpF5Ov7Jn7DKEudr",
+        "type": "CallSSDApi",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlValue": "getaUserAttendance",
+        "url": "getaUserAttendance",
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBody": "bh.input.userEmail",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "userEmail"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "inputVariables": [],
+        "inputParams": [],
+        "functionName": "sd_xpF5Ov7Jn7DKEudr",
+        "category": "HTTP",
+        "x": 385,
+        "y": 320,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_N87fZw6Bbo7seqbr",
+        "type": "Start",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "editAttendance",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "body",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "editAttendance",
+        "category": "General",
+        "x": 480,
+        "y": 320,
+        "wires": [
+            [
+                "sd_6PUcu8ObtCXhc4fA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "crudOperation"
+    },
+    {
+        "id": "sd_6PUcu8ObtCXhc4fA",
+        "type": "Script",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.input.email = bh.input.body.email\nconsole.log(bh.input.email,\"HHhh\")",
+        "functionName": "sd_6PUcu8ObtCXhc4fA",
+        "category": "Function",
+        "x": 625,
+        "y": 320,
+        "wires": [
+            [
+                "sd_EpqhsLlhnrMpq7D1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_EpqhsLlhnrMpq7D1",
+        "type": "CallSSDApi",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "put",
+        "methodMappingObj": {},
+        "urlValue": "updateAttendance",
+        "url": "updateAttendance/:email",
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBody": "bh.input.body",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "inputVariables": [
+            {
+                "key": "email",
+                "valueType": "bh.input",
+                "value": "email"
+            }
+        ],
+        "inputParams": [
+            "bh.input.email"
+        ],
+        "functionName": "sd_EpqhsLlhnrMpq7D1",
+        "category": "HTTP",
+        "x": 760,
+        "y": 320,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_EsJPNHbP8IXYBMWc",
+        "type": "Start",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "deleteAttendance",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "id",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "deleteAttendance",
+        "category": "General",
+        "x": 565,
+        "y": 40,
+        "wires": [
+            [
+                "sd_jokUIGKlumJj4N0I"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "crudOperation"
+    },
+    {
+        "id": "sd_jokUIGKlumJj4N0I",
+        "type": "CallSSDApi",
+        "z": "sd_YYmVHxmaRPx28YeD",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "delete",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlValue": "deleteAttendance",
+        "url": "deleteAttendance/:id",
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "reqBody": "bh.input.id",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "id"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "inputVariables": [
+            {
+                "key": "id",
+                "valueType": "bh.input",
+                "value": "id"
+            }
+        ],
+        "inputParams": [
+            "bh.input.id"
+        ],
+        "functionName": "sd_jokUIGKlumJj4N0I",
+        "category": "HTTP",
+        "x": 760,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]

@@ -383,7 +383,7 @@
                                     },
                                     {
                                         "_key": "[(ngModel)]",
-                                        "_value": "page.dm.editemployee.firstName",
+                                        "_value": "page.dm.editemployee.fullName",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -395,7 +395,7 @@
                                     },
                                     {
                                         "_key": "name",
-                                        "_value": "firstName",
+                                        "_value": "fullName",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -448,14 +448,6 @@
                                             {
                                                 "input1": "editEmployeeForm.controls['firstName']?.errors?.required",
                                                 "input2": "First Name is required",
-                                                "toggle": {
-                                                    "toggleData": [],
-                                                    "selected": "start"
-                                                }
-                                            },
-                                            {
-                                                "input1": "editEmployeeForm.controls['firstName']?.errors?.pattern",
-                                                "input2": "Only Letters allowed",
                                                 "toggle": {
                                                     "toggleData": [],
                                                     "selected": "start"
@@ -521,12 +513,6 @@
                                         "_type": "a",
                                         "_attrDef": "p",
                                         "_visibility": true
-                                    },
-                                    {
-                                        "_key": "pattern",
-                                        "_value": "^[a-zA-Z]+$",
-                                        "_type": "kv",
-                                        "_attrDef": "c"
                                     }
                                 ]
                             },
@@ -534,6 +520,7 @@
                                 "paletteKey": "NG-Input",
                                 "parentEditorKey": "a0c9e7f9-0c86-bc4e-96ef-7148987e786e",
                                 "isAdvancedComponent": true,
+                                "isCommented": "false",
                                 "commentid": null,
                                 "designerReference": [
                                     {
@@ -550,7 +537,7 @@
                                     },
                                     {
                                         "_key": "placeholder",
-                                        "_value": "Last Name",
+                                        "_value": "Email",
                                         "_type": "kv",
                                         "_attrDef": "p",
                                         "_useAsLabel": true
@@ -575,7 +562,7 @@
                                     },
                                     {
                                         "_key": "[(ngModel)]",
-                                        "_value": "page.dm.editemployee.lastName",
+                                        "_value": "page.dm.editemployee.email",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -587,7 +574,7 @@
                                     },
                                     {
                                         "_key": "name",
-                                        "_value": "lastName",
+                                        "_value": "email",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -667,7 +654,7 @@
                                     },
                                     {
                                         "_key": "Label",
-                                        "_value": "Surname",
+                                        "_value": "Email",
                                         "_type": "a",
                                         "_attrDef": "p",
                                         "_visibility": true
@@ -715,9 +702,9 @@
                                         "_visibility": true
                                     },
                                     {
-                                        "_key": "pattern",
-                                        "_value": "^[a-zA-Z]+$",
-                                        "_type": "kv",
+                                        "_key": "email",
+                                        "_value": "email",
+                                        "_type": "a",
                                         "_attrDef": "c"
                                     }
                                 ]
@@ -726,7 +713,8 @@
                                 "paletteKey": "NG-Input",
                                 "parentEditorKey": "a0c9e7f9-0c86-bc4e-96ef-7148987e786e",
                                 "isAdvancedComponent": true,
-                                "commentid": null,
+                                "isCommented": "true",
+                                "commentid": "1653500776494",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -918,7 +906,8 @@
                                 "paletteKey": "NG-DatePicker",
                                 "parentEditorKey": "a0c9e7f9-0c86-bc4e-96ef-7148987e786e",
                                 "isAdvancedComponent": true,
-                                "commentid": null,
+                                "isCommented": "true",
+                                "commentid": "1653502409811",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -1079,13 +1068,13 @@
                                     },
                                     {
                                         "_key": "[(ngModel)]",
-                                        "_value": "page.dm.editemployee.date",
+                                        "_value": "page.dm.editemployee.currentDate",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
                                     {
                                         "_key": "name",
-                                        "_value": "date",
+                                        "_value": "currentDate",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -1188,7 +1177,7 @@
                                     },
                                     {
                                         "_key": "placeholder",
-                                        "_value": "Enter Section",
+                                        "_value": "Attendance Status",
                                         "_type": "kv",
                                         "_attrDef": "p",
                                         "_useAsLabel": true
@@ -1213,7 +1202,7 @@
                                     },
                                     {
                                         "_key": "[(ngModel)]",
-                                        "_value": "page.dm.editemployee.section",
+                                        "_value": "page.dm.editemployee.attendance",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -1225,13 +1214,13 @@
                                     },
                                     {
                                         "_key": "name",
-                                        "_value": "section",
+                                        "_value": "attendance",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
                                     {
                                         "_key": "type",
-                                        "_value": "",
+                                        "_value": "boolean",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -1506,9 +1495,10 @@
                                             },
                                             {
                                                 "_key": "[disabled]",
-                                                "_value": "",
+                                                "_value": "editEmployeeForm.invalid",
                                                 "_type": "kv",
-                                                "_attrDef": "p"
+                                                "_attrDef": "p",
+                                                "_customAttributeFlag": "customInput"
                                             },
                                             {
                                                 "_key": "[disableRipple]",

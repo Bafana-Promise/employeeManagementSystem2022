@@ -23,7 +23,8 @@
         "y": 30,
         "wires": [
             [
-                "sd_9DpcGufmrBhK9kGM"
+                "sd_9DpcGufmrBhK9kGM",
+                "sd_gJFr42OUiklSqMIz"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -45,6 +46,53 @@
         "category": "Function",
         "x": 180,
         "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_gJFr42OUiklSqMIz",
+        "type": "GetDialogData",
+        "z": "sd_EXYxLrIKUajKaRjK",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "dialogDataMapping": "this.page.data",
+        "functionName": "sd_gJFr42OUiklSqMIz",
+        "category": "Dialog",
+        "x": 360,
+        "y": 40,
+        "wires": [
+            [
+                "sd_igWJQhcqAQbEGYy4"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "dialogDataMapping": {
+                "type": "this.page",
+                "value": "data",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_igWJQhcqAQbEGYy4",
+        "type": "Script",
+        "z": "sd_EXYxLrIKUajKaRjK",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.dm.editemployee = page.data;",
+        "functionName": "sd_igWJQhcqAQbEGYy4",
+        "category": "Function",
+        "x": 540,
+        "y": 40,
         "wires": [
             []
         ],

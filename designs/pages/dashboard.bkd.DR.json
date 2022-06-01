@@ -583,7 +583,7 @@
                                             },
                                             {
                                                 "_key": "html",
-                                                "_value": "Emplyees",
+                                                "_value": "Name : {{page.loggedInUser.firstName.toUpperCase() }}",
                                                 "_type": "a",
                                                 "_attrDef": "p"
                                             }
@@ -963,7 +963,7 @@
                                                 },
                                                 {
                                                     "_key": "html",
-                                                    "_value": "100",
+                                                    "_value": "{{page.loggedInUser._id.slice(7,10) }}",
                                                     "_type": "a",
                                                     "_attrDef": "p"
                                                 }
@@ -1453,7 +1453,7 @@
                                                 },
                                                 {
                                                     "_key": "html",
-                                                    "_value": "Employee's count ",
+                                                    "_value": "User Id : {{page.loggedInUser._id.slice(0,10) }} ",
                                                     "_type": "a",
                                                     "_attrDef": "p"
                                                 }
@@ -1464,7 +1464,8 @@
                                         "paletteKey": "Html5",
                                         "parentEditorKey": "c820fcd3-d5e1-e23d-4b8e-4e44ecf242be",
                                         "isAdvancedComponent": true,
-                                        "commentid": null,
+                                        "isCommented": "true",
+                                        "commentid": "1653468391533",
                                         "designerReference": [
                                             {
                                                 "_key": "style",
@@ -1651,7 +1652,8 @@
                                             "paletteKey": "html-editor",
                                             "parentEditorKey": "6ad7709e-d0ad-8a4c-ca6b-34eedfcdfdb1",
                                             "isAdvancedChildComponent": true,
-                                            "commentid": null,
+                                            "isCommented": "true",
+                                            "commentid": "1653468391533",
                                             "designerReference": [
                                                 {
                                                     "_key": "style",
@@ -2097,7 +2099,7 @@
                                             },
                                             {
                                                 "_key": "html",
-                                                "_value": "Emplyees",
+                                                "_value": "Qualification",
                                                 "_type": "a",
                                                 "_attrDef": "p"
                                             }
@@ -2477,7 +2479,7 @@
                                                 },
                                                 {
                                                     "_key": "html",
-                                                    "_value": "100",
+                                                    "_value": "{{page.loggedInUser.qualification}}",
                                                     "_type": "a",
                                                     "_attrDef": "p"
                                                 }
@@ -2967,7 +2969,7 @@
                                                 },
                                                 {
                                                     "_key": "html",
-                                                    "_value": "Employee's count ",
+                                                    "_value": "Join date : {{page.loggedInUser.date.toString().slice(0,10) }} ",
                                                     "_type": "a",
                                                     "_attrDef": "p"
                                                 }
@@ -2978,7 +2980,8 @@
                                         "paletteKey": "Html5",
                                         "parentEditorKey": "396a1d97-d41d-f083-0cc0-24f524ff90aa",
                                         "isAdvancedComponent": true,
-                                        "commentid": null,
+                                        "isCommented": "true",
+                                        "commentid": "1653469340023",
                                         "designerReference": [
                                             {
                                                 "_key": "style",
@@ -3165,7 +3168,8 @@
                                             "paletteKey": "html-editor",
                                             "parentEditorKey": "e42ab2d1-611c-c474-4b06-38e7bfeec233",
                                             "isAdvancedChildComponent": true,
-                                            "commentid": null,
+                                            "isCommented": "true",
+                                            "commentid": "1653469340023",
                                             "designerReference": [
                                                 {
                                                     "_key": "style",
@@ -3611,7 +3615,7 @@
                                             },
                                             {
                                                 "_key": "html",
-                                                "_value": "Emplyees",
+                                                "_value": "Attendance count",
                                                 "_type": "a",
                                                 "_attrDef": "p"
                                             }
@@ -3796,6 +3800,8 @@
                                             {
                                                 "_key": "class",
                                                 "_value": [
+                                                    "green-color",
+                                                    "red-color",
                                                     "xxx-largeFont",
                                                     "font-weight700"
                                                 ],
@@ -3969,6 +3975,12 @@
                                                 "_type": "kv",
                                                 "_attrDef": "p",
                                                 "_visibility": false
+                                            },
+                                            {
+                                                "_key": "*ngIf",
+                                                "_value": "!page.admin",
+                                                "_type": "kv",
+                                                "_attrDef": "c"
                                             }
                                         ],
                                         "14470e7b-5eda-fdda-7990-8acbe44cbd21": {
@@ -3991,7 +4003,7 @@
                                                 },
                                                 {
                                                     "_key": "html",
-                                                    "_value": "100",
+                                                    "_value": "{{page.present.length}}",
                                                     "_type": "a",
                                                     "_attrDef": "p"
                                                 }
@@ -4012,7 +4024,11 @@
                                             },
                                             {
                                                 "_key": "class",
-                                                "_value": "",
+                                                "_value": [
+                                                    "green-color",
+                                                    "font-weight700",
+                                                    "xxx-largeFont"
+                                                ],
                                                 "_type": "dav",
                                                 "_attrDef": "p"
                                             },
@@ -4183,6 +4199,12 @@
                                                 "_type": "kv",
                                                 "_attrDef": "p",
                                                 "_visibility": false
+                                            },
+                                            {
+                                                "_key": "*ngIf",
+                                                "_value": "page.admin",
+                                                "_type": "kv",
+                                                "_attrDef": "c"
                                             }
                                         ],
                                         "ec696db5-a50d-467a-ffe8-09cfb2eea1fa": {
@@ -4205,7 +4227,7 @@
                                                 },
                                                 {
                                                     "_key": "html",
-                                                    "_value": "",
+                                                    "_value": "{{page.allPresent.length}}",
                                                     "_type": "a",
                                                     "_attrDef": "p"
                                                 }
@@ -4481,7 +4503,7 @@
                                                 },
                                                 {
                                                     "_key": "html",
-                                                    "_value": "Employee's count ",
+                                                    "_value": "{{page.loggedInUser.email }}",
                                                     "_type": "a",
                                                     "_attrDef": "p"
                                                 }
@@ -4492,7 +4514,8 @@
                                         "paletteKey": "Html5",
                                         "parentEditorKey": "eb407ffd-8e83-8f2d-3f28-d30afabd93c4",
                                         "isAdvancedComponent": true,
-                                        "commentid": null,
+                                        "isCommented": "true",
+                                        "commentid": "1653469761889",
                                         "designerReference": [
                                             {
                                                 "_key": "style",
@@ -4679,7 +4702,8 @@
                                             "paletteKey": "html-editor",
                                             "parentEditorKey": "bac8a779-4855-9656-0839-643c1e35b3e5",
                                             "isAdvancedChildComponent": true,
-                                            "commentid": null,
+                                            "isCommented": "true",
+                                            "commentid": "1653469761889",
                                             "designerReference": [
                                                 {
                                                     "_key": "style",
@@ -5109,6 +5133,7 @@
                                         "paletteKey": "html-editor",
                                         "parentEditorKey": "9f79ecf4-a39d-8c05-4aac-ddbd50bacb2a",
                                         "isAdvancedChildComponent": true,
+                                        "isCommented": "false",
                                         "commentid": null,
                                         "designerReference": [
                                             {
@@ -5125,7 +5150,7 @@
                                             },
                                             {
                                                 "_key": "html",
-                                                "_value": "Emplyees",
+                                                "_value": "Absent count",
                                                 "_type": "a",
                                                 "_attrDef": "p"
                                             }
@@ -5310,6 +5335,7 @@
                                             {
                                                 "_key": "class",
                                                 "_value": [
+                                                    "red-color",
                                                     "xxx-largeFont",
                                                     "font-weight700"
                                                 ],
@@ -5483,6 +5509,12 @@
                                                 "_type": "kv",
                                                 "_attrDef": "p",
                                                 "_visibility": false
+                                            },
+                                            {
+                                                "_key": "*ngIf",
+                                                "_value": "!page.admin",
+                                                "_type": "kv",
+                                                "_attrDef": "c"
                                             }
                                         ],
                                         "75439f96-88af-b3d2-d86e-e1225ef7de2a": {
@@ -5505,7 +5537,7 @@
                                                 },
                                                 {
                                                     "_key": "html",
-                                                    "_value": "100",
+                                                    "_value": "{{page.absent.length}}",
                                                     "_type": "a",
                                                     "_attrDef": "p"
                                                 }
@@ -5526,7 +5558,11 @@
                                             },
                                             {
                                                 "_key": "class",
-                                                "_value": "",
+                                                "_value": [
+                                                    "red-color",
+                                                    "font-weight700",
+                                                    "xxx-largeFont"
+                                                ],
                                                 "_type": "dav",
                                                 "_attrDef": "p"
                                             },
@@ -5697,6 +5733,12 @@
                                                 "_type": "kv",
                                                 "_attrDef": "p",
                                                 "_visibility": false
+                                            },
+                                            {
+                                                "_key": "*ngIf",
+                                                "_value": "page.admin",
+                                                "_type": "kv",
+                                                "_attrDef": "c"
                                             }
                                         ],
                                         "aab6a819-ea65-b9d8-a4e5-0d357dae4ef2": {
@@ -5719,7 +5761,7 @@
                                                 },
                                                 {
                                                     "_key": "html",
-                                                    "_value": "",
+                                                    "_value": "{{page.allAbsent.length}}",
                                                     "_type": "a",
                                                     "_attrDef": "p"
                                                 }
@@ -5995,7 +6037,7 @@
                                                 },
                                                 {
                                                     "_key": "html",
-                                                    "_value": "Employee's count ",
+                                                    "_value": "{{page.loggedInUser.email }} ",
                                                     "_type": "a",
                                                     "_attrDef": "p"
                                                 }
@@ -6006,7 +6048,8 @@
                                         "paletteKey": "Html5",
                                         "parentEditorKey": "692b70b6-2dad-2ebe-0f53-2c1d35e92720",
                                         "isAdvancedComponent": true,
-                                        "commentid": null,
+                                        "isCommented": "true",
+                                        "commentid": "1653562801520",
                                         "designerReference": [
                                             {
                                                 "_key": "style",
@@ -6193,7 +6236,8 @@
                                             "paletteKey": "html-editor",
                                             "parentEditorKey": "207d4deb-b516-f485-c8ce-a4bfe41a8337",
                                             "isAdvancedChildComponent": true,
-                                            "commentid": null,
+                                            "isCommented": "true",
+                                            "commentid": "1653562801520",
                                             "designerReference": [
                                                 {
                                                     "_key": "style",

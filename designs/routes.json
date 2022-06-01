@@ -13,10 +13,6 @@
                     "path": "dashboard"
                 },
                 {
-                    "component": "sectionComponent",
-                    "path": "section"
-                },
-                {
                     "component": "adminComponent",
                     "path": "admin"
                 },

@@ -96,6 +96,41 @@
                     "type": "literal",
                     "value": ""
                 }
+            },
+            {
+                "textIp": "loggedInUser",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "present",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
+            },
+            {
+                "textIp": "absent",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
+            },
+            {
+                "textIp": "allAbsent",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
+            },
+            {
+                "textIp": "allPresent",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
             }
         ],
         "functionName": "sd_hXjvJREexDfCAife",
@@ -118,10 +153,10 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.chartType = 'line';\npage.chartDatasets = [\n  { data: [65, 59, 80, 81, 56, 55, 40], label: 'This years Bookings' },\n  { data: [28, 48, 40, 19, 86, 27, 90], label: 'Last years booking' }\n];\npage.chartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];\npage.chartColors = [\n  {\n    backgroundColor: 'rgba(105, 0, 132, .2)',\n    borderColor: 'rgba(200, 99, 132, .7)',\n    borderWidth: 2,\n  },\n  {\n    backgroundColor: 'rgba(0, 137, 132, .2)',\n    borderColor: 'rgba(0, 10, 130, .7)',\n    borderWidth: 2,\n  }\n];\npage.chartOptions = {\n  responsive: true\n};\n",
+        "script": "page.chartType = 'line';\npage.chartDatasets = [\n  { data: [65, 59, 80, 81, 56, 55, 40], label: 'This years Attendance' },\n  { data: [28, 48, 40, 19, 86, 27, 90], label: 'Last years Attendance' }\n];\npage.chartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];\npage.chartColors = [\n  {\n    backgroundColor: 'rgba(105, 0, 132, .2)',\n    borderColor: 'rgba(200, 99, 132, .7)',\n    borderWidth: 2,\n  },\n  {\n    backgroundColor: 'rgba(0, 137, 132, .2)',\n    borderColor: 'rgba(0, 10, 130, .7)',\n    borderWidth: 2,\n  }\n];\npage.chartOptions = {\n  responsive: true\n};\npage.loggedInUser = JSON.parse(sessionStorage.getItem(\"user\"));",
         "functionName": "sd_5Z6gIIbZjLBteyzL",
         "category": "Function",
-        "x": 340,
+        "x": 285,
         "y": 40,
         "wires": [
             [
@@ -142,10 +177,165 @@
         "script": "page.pieChartData = [{\n    data: [300, 500, 100]\n}\n];\n\npage.pieChartLabels = ['Last year 2021','Current year 2022', 'Last of last year 2020'];\n\npage.pieChartOptions = {\n    responsive: true\n}",
         "functionName": "sd_siVo6jVsOnvCLwhC",
         "category": "Function",
-        "x": 485,
+        "x": 405,
         "y": 40,
         "wires": [
+            [
+                "sd_rPba3KFvCD56fPeb"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_L6GkOWAqlam6I01a",
+        "type": "PageCallService",
+        "z": "sd_MwZf70r1LlVTAxKv",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_YYmVHxmaRPx28YeD",
+            "type": "tab",
+            "createdDate": "2022-05-22T17:20:51.515Z",
+            "label": "crudOperation",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_UBzzlZ851jTYoPBW",
+            "flowName": "getAllAttendance"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "result",
+                "valueType": "this.page",
+                "value": "allAttendance",
+                "mapVarName": "result",
+                "localVar": "this.page.allAttendance"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/crudOperation",
+        "startName": "getAllAttendance",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_L6GkOWAqlam6I01a",
+        "category": "General",
+        "x": 545,
+        "y": 160,
+        "wires": [
+            [
+                "sd_vpuglNULOya0MD5k"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_vpuglNULOya0MD5k",
+        "type": "Script",
+        "z": "sd_MwZf70r1LlVTAxKv",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// page.tableData = page.allAttendance;\nconsole.log(page.aUserAttendance,\"BBBBBBBBBBBBBB\")\nconsole.log(page.allAttendance, \"PPPPPPPPPPPPPP\")\n\npage.allAttendance.forEach(function (item) {\n    if(item.attendance === true){\n        page.allPresent.push(item);\n        console.log(item,\"Present\");\n    }else{\n        page.allAbsent.push(item);\n        console.log(item,\"Absent\");\n    }\n})\n\npage.aUserAttendance.forEach(function (item) {\n    if(item.attendance === true){\n        page.present.push(item);\n        console.log(item,\"Present\");\n    }else{\n        page.absent.push(item);\n        console.log(item,\"Absent\");\n    }\n})",
+        "functionName": "sd_vpuglNULOya0MD5k",
+        "category": "Function",
+        "x": 634,
+        "y": 158.8125,
+        "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_87xN6lpConT4Uw6N",
+        "type": "PageCallService",
+        "z": "sd_MwZf70r1LlVTAxKv",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_YYmVHxmaRPx28YeD",
+            "type": "tab",
+            "createdDate": "2022-05-22T17:20:51.515Z",
+            "label": "crudOperation",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_RHrLfLkjsbBsR6O3",
+            "flowName": "getaUserAttendance"
+        },
+        "inputVariables": [
+            {
+                "key": "userEmail",
+                "map": true,
+                "valueType": "this.page",
+                "value": "owner"
+            }
+        ],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "result",
+                "valueType": "this.page",
+                "value": "aUserAttendance",
+                "mapVarName": "result",
+                "localVar": "this.page.aUserAttendance"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/crudOperation",
+        "startName": "getaUserAttendance",
+        "inputParams": [
+            "this.page.owner"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_87xN6lpConT4Uw6N",
+        "category": "General",
+        "x": 345,
+        "y": 160,
+        "wires": [
+            [
+                "sd_L6GkOWAqlam6I01a"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_rPba3KFvCD56fPeb",
+        "type": "Script",
+        "z": "sd_MwZf70r1LlVTAxKv",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let email = JSON.parse(sessionStorage.getItem(\"user\")).email;\npage.owner = {\n  email\n};\npage.admin = email.includes('admin');\npage.loggedInUser = JSON.parse(sessionStorage.getItem(\"user\"));",
+        "functionName": "sd_rPba3KFvCD56fPeb",
+        "category": "Function",
+        "x": 260,
+        "y": 160,
+        "wires": [
+            [
+                "sd_87xN6lpConT4Uw6N"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

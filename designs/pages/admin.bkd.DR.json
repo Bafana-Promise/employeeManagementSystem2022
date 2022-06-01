@@ -457,7 +457,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "Admin ",
+                                    "_value": "Admin ID : {{page.loggedInUser._id }}",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -668,7 +668,7 @@
                         "designerReference": [
                             {
                                 "_key": "Header Label",
-                                "_value": "Position",
+                                "_value": "Name",
                                 "_type": "a",
                                 "_attrDef": "p"
                             },
@@ -680,7 +680,7 @@
                             },
                             {
                                 "_key": "Mapping",
-                                "_value": "{{table.position}}",
+                                "_value": "{{table.firstName}}",
                                 "_type": "ma",
                                 "_attrDef": "p",
                                 "_useAsLabel": true
@@ -714,7 +714,7 @@
                         "designerReference": [
                             {
                                 "_key": "Header Label",
-                                "_value": "Name",
+                                "_value": "Surname",
                                 "_type": "a",
                                 "_attrDef": "p"
                             },
@@ -726,53 +726,7 @@
                             },
                             {
                                 "_key": "Mapping",
-                                "_value": "{{table.name}}",
-                                "_type": "ma",
-                                "_attrDef": "p",
-                                "_useAsLabel": true
-                            },
-                            {
-                                "_key": "columnName",
-                                "_value": "",
-                                "_type": "dav",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "headerclass",
-                                "_value": "",
-                                "_type": "dav",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "columnclass",
-                                "_value": "",
-                                "_type": "dav",
-                                "_attrDef": "p"
-                            }
-                        ]
-                    },
-                    "7a0180f6-473b-8403-341e-ed30d1c35be1": {
-                        "paletteKey": "ng-table-column",
-                        "parentEditorKey": "0f1cd228-adee-e24c-d6ce-57136bb7fdb0",
-                        "isAdvancedChildComponent": true,
-                        "commentid": null,
-                        "designerReference": [
-                            {
-                                "_key": "Header Label",
-                                "_value": "Weight",
-                                "_type": "a",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "matSortHeaderColumn",
-                                "_value": "mat-sort-header",
-                                "_type": "a",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "Mapping",
-                                "_value": "{{table.weight}}",
+                                "_value": "{{table.lastName}}",
                                 "_type": "ma",
                                 "_attrDef": "p",
                                 "_useAsLabel": true
@@ -806,7 +760,7 @@
                         "designerReference": [
                             {
                                 "_key": "Header Label",
-                                "_value": "Symbol",
+                                "_value": "Qualification",
                                 "_type": "a",
                                 "_attrDef": "p"
                             },
@@ -818,7 +772,99 @@
                             },
                             {
                                 "_key": "Mapping",
-                                "_value": "{{table.symbol}}",
+                                "_value": "{{table.qualification}}",
+                                "_type": "ma",
+                                "_attrDef": "p",
+                                "_useAsLabel": true
+                            },
+                            {
+                                "_key": "columnName",
+                                "_value": "",
+                                "_type": "dav",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "headerclass",
+                                "_value": "",
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "columnclass",
+                                "_value": "",
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            }
+                        ]
+                    },
+                    "7a0180f6-473b-8403-341e-ed30d1c35be1": {
+                        "paletteKey": "ng-table-column",
+                        "parentEditorKey": "0f1cd228-adee-e24c-d6ce-57136bb7fdb0",
+                        "isAdvancedChildComponent": true,
+                        "commentid": null,
+                        "designerReference": [
+                            {
+                                "_key": "Header Label",
+                                "_value": "Email",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "matSortHeaderColumn",
+                                "_value": "mat-sort-header",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "Mapping",
+                                "_value": "{{table.email}}",
+                                "_type": "ma",
+                                "_attrDef": "p",
+                                "_useAsLabel": true
+                            },
+                            {
+                                "_key": "columnName",
+                                "_value": "",
+                                "_type": "dav",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "headerclass",
+                                "_value": "",
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "columnclass",
+                                "_value": "",
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            }
+                        ]
+                    },
+                    "e886cd92-5c58-ff57-28c6-9111b13bec24": {
+                        "paletteKey": "ng-table-column",
+                        "parentEditorKey": "0f1cd228-adee-e24c-d6ce-57136bb7fdb0",
+                        "isAdvancedChildComponent": true,
+                        "commentid": null,
+                        "designerReference": [
+                            {
+                                "_key": "Header Label",
+                                "_value": "Date",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "matSortHeaderColumn",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "Mapping",
+                                "_value": "{{table.date.slice(0, 10)}}",
                                 "_type": "ma",
                                 "_attrDef": "p",
                                 "_useAsLabel": true
@@ -989,7 +1035,7 @@
                                     },
                                     {
                                         "_key": "(click)",
-                                        "_value": "edit()",
+                                        "_value": "edit(table)",
                                         "_type": "kv",
                                         "_attrDef": "c",
                                         "objValue": {
@@ -997,7 +1043,9 @@
                                             "functionName": "edit",
                                             "activeTree": "pages",
                                             "z": "sd_FjOxtwAmgUhe8Y7t",
-                                            "input": []
+                                            "input": [
+                                                "table"
+                                            ]
                                         }
                                     }
                                 ]
@@ -1040,6 +1088,21 @@
                                         "_value": "",
                                         "_type": "kv",
                                         "_attrDef": "p"
+                                    },
+                                    {
+                                        "_key": "(click)",
+                                        "_value": "deleteUser(table._id)",
+                                        "_type": "kv",
+                                        "_attrDef": "c",
+                                        "objValue": {
+                                            "nodeID": "sd_bdv6zY7m8sCWmXxr",
+                                            "functionName": "deleteUser",
+                                            "activeTree": "pages",
+                                            "z": "sd_FjOxtwAmgUhe8Y7t",
+                                            "input": [
+                                                "table._id"
+                                            ]
+                                        }
                                     }
                                 ]
                             }

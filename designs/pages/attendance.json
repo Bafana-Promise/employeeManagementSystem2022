@@ -40,16 +40,350 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "allAttendance",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
+            },
+            {
+                "textIp": "owner",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "aUserAttendance",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "admin",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "userfromSessionstorage",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "present",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
+            },
+            {
+                "textIp": "absent",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
+            }
+        ],
         "functionName": "sd_C9vLWmJosrlykN2A",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 125,
+        "y": 40,
+        "wires": [
+            [
+                "sd_lk6GmPoteKsrFIzM"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_8dVDPxMUOQRs20aP",
+        "type": "PageCallService",
+        "z": "sd_ljCziVtQ5q40TfwQ",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_YYmVHxmaRPx28YeD",
+            "type": "tab",
+            "createdDate": "2022-05-22T17:20:51.515Z",
+            "label": "crudOperation",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_UBzzlZ851jTYoPBW",
+            "flowName": "getAllAttendance"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "result",
+                "valueType": "this.page",
+                "value": "allAttendance",
+                "mapVarName": "result",
+                "localVar": "this.page.allAttendance"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/crudOperation",
+        "startName": "getAllAttendance",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_8dVDPxMUOQRs20aP",
+        "category": "General",
+        "x": 505,
+        "y": 40,
+        "wires": [
+            [
+                "sd_VDjpZ4NmwN0Uis1M"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_VDjpZ4NmwN0Uis1M",
+        "type": "Script",
+        "z": "sd_ljCziVtQ5q40TfwQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let email = JSON.parse(sessionStorage.getItem(\"user\")).email;\npage.owner = {\n  email\n};\npage.admin = email.includes('admin');\n// page.tableData = page.allAttendance;\nconsole.log(page.aUserAttendance,\"BBBBBBBBBBBBBB\")\nconsole.log(page.allAttendance, \"PPPPPPPPPPPPPP\")\n\npage.userfromSessionstorage = JSON.parse(sessionStorage.getItem(\"user\"));\nconsole.log(page.userfromSessionstorage.email,\"ssssssss\")\n\nif(page.userfromSessionstorage.email.includes(\"admin\") ){\n    page.tableData = page.allAttendance;\n}\nelse{\n    // page.tableData = page.aUserAttendance;\npage.aUserAttendance.forEach(function (item) {\n    if(item.attendance === true){\n        page.present.push(item);\n        console.log(item,\"Present\");\n    }else{\n        page.absent.push(item);\n        \n        console.log(item,\"Absent\");\n    }\n})\nconsole.log(page.present,\"Presents\");\nconsole.log(page.absent,\"Absents\");\npage.tableData = page.present;\npage.userTableData = page.absent;\n}\n",
+        "functionName": "sd_VDjpZ4NmwN0Uis1M",
+        "category": "Function",
+        "x": 645,
+        "y": 40,
         "wires": [
             []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true
+    },
+    {
+        "id": "sd_lk6GmPoteKsrFIzM",
+        "type": "Script",
+        "z": "sd_ljCziVtQ5q40TfwQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let email = JSON.parse(sessionStorage.getItem(\"user\")).email;\npage.owner = {\n  email\n};\npage.admin = email.includes('admin');",
+        "functionName": "sd_lk6GmPoteKsrFIzM",
+        "category": "Function",
+        "x": 245,
+        "y": 40,
+        "wires": [
+            [
+                "sd_h03o2EWfShN2BiO9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_h03o2EWfShN2BiO9",
+        "type": "PageCallService",
+        "z": "sd_ljCziVtQ5q40TfwQ",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_YYmVHxmaRPx28YeD",
+            "type": "tab",
+            "createdDate": "2022-05-22T17:20:51.515Z",
+            "label": "crudOperation",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_RHrLfLkjsbBsR6O3",
+            "flowName": "getaUserAttendance"
+        },
+        "inputVariables": [
+            {
+                "key": "userEmail",
+                "map": true,
+                "valueType": "this.page",
+                "value": "owner"
+            }
+        ],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "result",
+                "valueType": "this.page",
+                "value": "aUserAttendance",
+                "mapVarName": "result",
+                "localVar": "this.page.aUserAttendance"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/crudOperation",
+        "startName": "getaUserAttendance",
+        "inputParams": [
+            "this.page.owner"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_h03o2EWfShN2BiO9",
+        "category": "General",
+        "x": 365,
+        "y": 40,
+        "wires": [
+            [
+                "sd_8dVDPxMUOQRs20aP"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_VcSuPjQSPlZ2BJP0",
+        "type": "PageCallService",
+        "z": "sd_ljCziVtQ5q40TfwQ",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_YYmVHxmaRPx28YeD",
+            "type": "tab",
+            "createdDate": "2022-05-22T17:20:51.515Z",
+            "label": "crudOperation",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_UBzzlZ851jTYoPBW",
+            "flowName": "getAllAttendance"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "result",
+                "valueType": "this.page",
+                "value": "allAttendance",
+                "mapVarName": "result",
+                "localVar": "this.page.allAttendance"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/crudOperation",
+        "startName": "getAllAttendance",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_VcSuPjQSPlZ2BJP0",
+        "category": "General",
+        "x": 445,
+        "y": 140,
+        "wires": [
+            [
+                "sd_mZsqWgEgByuZuMj5"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true
+    },
+    {
+        "id": "sd_mZsqWgEgByuZuMj5",
+        "type": "Script",
+        "z": "sd_ljCziVtQ5q40TfwQ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// page.tableData = page.allAttendance;\nconsole.log(page.aUserAttendance,\"BBBBBBBBBBBBBB\")\nconsole.log(page.allAttendance, \"PPPPPPPPPPPPPP\")\n\npage.allAttendance.forEach(function (item) {\n    if(item.attendance === true){\n        page.allPresent.push(item);\n        console.log(item,\"Present\");\n    }else{\n        page.allAbsent.push(item);\n        console.log(item,\"Absent\");\n    }\n})\n\npage.aUserAttendance.forEach(function (item) {\n    if(item.attendance === true){\n        page.present.push(item);\n        console.log(item,\"Present\");\n    }else{\n        page.absent.push(item);\n        console.log(item,\"Absent\");\n    }\n})",
+        "functionName": "sd_mZsqWgEgByuZuMj5",
+        "category": "Function",
+        "x": 534,
+        "y": 138.8125,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true
+    },
+    {
+        "id": "sd_pCNu8Nbb2vErhv1e",
+        "type": "PageCallService",
+        "z": "sd_ljCziVtQ5q40TfwQ",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_YYmVHxmaRPx28YeD",
+            "type": "tab",
+            "createdDate": "2022-05-22T17:20:51.515Z",
+            "label": "crudOperation",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_RHrLfLkjsbBsR6O3",
+            "flowName": "getaUserAttendance"
+        },
+        "inputVariables": [
+            {
+                "key": "userEmail",
+                "map": true,
+                "valueType": "this.page",
+                "value": "owner"
+            }
+        ],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "result",
+                "valueType": "this.page",
+                "value": "aUserAttendance",
+                "mapVarName": "result",
+                "localVar": "this.page.aUserAttendance"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/crudOperation",
+        "startName": "getaUserAttendance",
+        "inputParams": [
+            "this.page.owner"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_pCNu8Nbb2vErhv1e",
+        "category": "General",
+        "x": 245,
+        "y": 140,
+        "wires": [
+            [
+                "sd_VcSuPjQSPlZ2BJP0"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true
     }
 ]

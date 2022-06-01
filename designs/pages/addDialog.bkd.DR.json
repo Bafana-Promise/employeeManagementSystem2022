@@ -1704,9 +1704,10 @@
                                             },
                                             {
                                                 "_key": "[disabled]",
-                                                "_value": "",
+                                                "_value": "addUser.invalid",
                                                 "_type": "kv",
-                                                "_attrDef": "p"
+                                                "_attrDef": "p",
+                                                "_customAttributeFlag": "customInput"
                                             },
                                             {
                                                 "_key": "[disableRipple]",

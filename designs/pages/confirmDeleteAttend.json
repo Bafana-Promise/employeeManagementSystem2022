@@ -1,0 +1,126 @@
+[
+    {
+        "id": "sd_HAncF4DIFIxCB1pZ",
+        "type": "tab",
+        "createdDate": "2022-05-26T14:49:45.616Z",
+        "label": "confirmDeleteAttend",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "confirmDeleteAttendComponent"
+    },
+    {
+        "id": "sd_0cWUPGwtYX54HShC",
+        "type": "OnInit",
+        "z": "sd_HAncF4DIFIxCB1pZ",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_0cWUPGwtYX54HShC",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_7se1VnmMGGvT5d2H"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "confirmDeleteAttendComponent"
+    },
+    {
+        "id": "sd_7se1VnmMGGvT5d2H",
+        "type": "PageVariables",
+        "z": "sd_HAncF4DIFIxCB1pZ",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_7se1VnmMGGvT5d2H",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            [
+                "sd_VNTOjOymeqIvyZGJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_VNTOjOymeqIvyZGJ",
+        "type": "GetDialogData",
+        "z": "sd_HAncF4DIFIxCB1pZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "dialogDataMapping": "this.page.id",
+        "functionName": "sd_VNTOjOymeqIvyZGJ",
+        "category": "Dialog",
+        "x": 345,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "dialogDataMapping": {
+                "type": "this.page",
+                "value": "id",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_EcNIwaBJwVYJkAmX",
+        "type": "PageStart",
+        "z": "sd_HAncF4DIFIxCB1pZ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "yes",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "yes",
+        "category": "General",
+        "x": 132,
+        "y": 144.8125,
+        "wires": [
+            [
+                "sd_GiN0Wn5ij4P9Ih3s"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "confirmDeleteAttendComponent"
+    },
+    {
+        "id": "sd_GiN0Wn5ij4P9Ih3s",
+        "type": "Script",
+        "z": "sd_HAncF4DIFIxCB1pZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(page.id,\"matric\")",
+        "functionName": "sd_GiN0Wn5ij4P9Ih3s",
+        "category": "Function",
+        "x": 287,
+        "y": 144.8125,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]

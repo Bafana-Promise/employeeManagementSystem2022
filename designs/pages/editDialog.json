@@ -23,7 +23,7 @@
         "y": 30,
         "wires": [
             [
-                "sd_o4pgD06dtrvjenXw"
+                "sd_MIfZOL1j3KJgTmIq"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -31,20 +31,45 @@
         "serviceName": "editDialogComponent"
     },
     {
-        "id": "sd_o4pgD06dtrvjenXw",
-        "type": "PageVariables",
+        "id": "sd_MIfZOL1j3KJgTmIq",
+        "type": "GetDialogData",
         "z": "sd_0CRsBzKdGeUpWYdY",
-        "viewType": "pages",
+        "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "inputs": 1,
-        "outputs": 1,
-        "operation": "set",
-        "globalVariables": [],
-        "functionName": "sd_o4pgD06dtrvjenXw",
+        "dialogDataMapping": "this.page.data",
+        "functionName": "sd_MIfZOL1j3KJgTmIq",
+        "category": "Dialog",
+        "x": 205,
+        "y": 40,
+        "wires": [
+            [
+                "sd_v67uzJyxlr99wc4v"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "dialogDataMapping": {
+                "type": "this.page",
+                "value": "data",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_v67uzJyxlr99wc4v",
+        "type": "Script",
+        "z": "sd_0CRsBzKdGeUpWYdY",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.dm.edituser = page.data\n\nconsole.log(page.data,'Exe')",
+        "functionName": "sd_v67uzJyxlr99wc4v",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 405,
+        "y": 40,
         "wires": [
             []
         ],

@@ -74,11 +74,11 @@
         "flow_type": "sync",
         "functionName": "login",
         "category": "General",
-        "x": 80,
-        "y": 140,
+        "x": 65,
+        "y": 120,
         "wires": [
             [
-                "sd_PgmSsrfl1nY2WSZE"
+                "sd_Zc8Dw8wVMX0DLtNf"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -92,11 +92,11 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "\nsessionStorage.setItem(\"user\", JSON.stringify(bh.input.loginUser))\nwindow.location.href =  '/home/dashboard'",
+        "script": "bh.local.message = \"\"\nif(!bh.local.data.length){\n    bh.local.message = \"User does not exist Or Incorrect Email\" \n}else  if(bh.local.data[0].password === bh.input.loginUser.password){\n    sessionStorage.setItem(\"user\", JSON.stringify(bh.local.data[0]))\n    bh.local.message = \"Logged In Sucessfully\"\n    window.location.href =  '/home/dashboard'\n}else{\n    bh.local.message = \"Invalid Password\"\n}\n// sessionStorage.setItem(\"user\", JSON.stringify(bh.input.loginUser))\n// window.location.href =  '/home/dashboard'",
         "functionName": "sd_PgmSsrfl1nY2WSZE",
         "category": "Function",
-        "x": 280,
-        "y": 140,
+        "x": 425,
+        "y": 120,
         "wires": [
             [
                 "sd_IhQVlFddSz3AKOsY"
@@ -114,8 +114,8 @@
         "nodeType": "flow",
         "name": "",
         "message": {
-            "type": "str",
-            "value": "Login successfully"
+            "type": "bh.local",
+            "value": "message"
         },
         "action": {
             "type": "str",
@@ -123,7 +123,7 @@
         },
         "duration": {
             "type": "num",
-            "value": "400"
+            "value": "4000"
         },
         "horizontalPosition": "center",
         "horizontalPositionMap": "",
@@ -136,10 +136,71 @@
         "direction": "ltr",
         "functionName": "sd_IhQVlFddSz3AKOsY",
         "category": "General",
-        "x": 425,
-        "y": 140,
+        "x": 585,
+        "y": 120,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_Zc8Dw8wVMX0DLtNf",
+        "type": "PageCallService",
+        "z": "sd_3KR6pHmzMgtgSWiO",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_YYmVHxmaRPx28YeD",
+            "type": "tab",
+            "createdDate": "2022-05-22T17:20:51.515Z",
+            "label": "crudOperation",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_MKW7pttNe03pvBjK",
+            "flowName": "loginUser"
+        },
+        "inputVariables": [
+            {
+                "key": "user",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "loginUser"
+            }
+        ],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "result",
+                "valueType": "bh.local",
+                "value": "data",
+                "mapVarName": "result",
+                "localVar": "bh.local.data"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/crudOperation",
+        "startName": "loginUser",
+        "inputParams": [
+            "bh.input.loginUser"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_Zc8Dw8wVMX0DLtNf",
+        "category": "General",
+        "x": 240,
+        "y": 120,
+        "wires": [
+            [
+                "sd_PgmSsrfl1nY2WSZE"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
